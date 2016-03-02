@@ -1,0 +1,94 @@
+<html>
+  <head>
+    <title>학생 선택</title>
+    <meta charset="utf-8">
+    <style>
+      div {
+        border: 1px solid gray;
+        width: 70px;
+        height: 30px;
+        text-align: center;
+        padding-top: 10px;
+        float:left;
+      }
+
+      #copyright{
+        font-size: 80%;
+        clear: left;
+        background-color: lightgray;
+        padding: 20px;
+      }
+
+      #count {
+        font-size: 3em;
+        font-weight: bolder;
+        margin-left: 50px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>학생 자동 선택 시스템</h1>
+    <p>이 시스템은 학생을 자동으로 선택합니다.</p>
+
+    <p>
+      <button id="selectBtn">학생을 선택하라!</button>
+      <span id = "count">10</span>
+    </p>
+
+    <div class="student">김양모</div>
+    <div class="student">민경훈</div>
+    <div class="student">이민섭</div>
+    <div class="student">이대희</div>
+    <div class="student">김동래</div>
+    <div class="student">박현신</div>
+    <div class="student">이천배</div>
+    <div class="student">이민우</div>
+    <div class="student">박기석</div>
+    <div class="student">김현지</div>
+    <div class="student">김운남</div>
+    <div class="student">송석원</div>
+    <div class="student">권승협</div>
+    <div class="student">곽용호</div>
+    <div class="student">최춘호</div>
+    <div class="student">송지환</div>
+    <div class="student">신기학</div>
+    <div class="student">배윤호</div>
+    <div class="student">김평일</div>
+    <div class="student">최한비</div>
+    <div class="student">김한준</div>
+    <div class="student">강성준</div>
+    <div class="student">명재환</div>
+
+    <p id="copyright">by <a href="http://www.naver.com">BITCAMP</a>.</p>
+
+    <script>
+    var btn = document.getElementById("selectBtn");
+    btn.onclick = function() {
+      var students = document.querySelectorAll(".student");
+
+      var selectedNo = 0;
+      var alarm1 = window.setInterval(function(){
+        var newNo = Math.floor(Math.random() * 23);
+        students[selectedNo].style["background-color"] = "white";
+        students[newNo].style["background-color"] = "red";
+        selectedNo = newNo;
+      }, 100);
+
+
+
+      var alarm2 = window.setInterval(function(){
+        var countDiv = document.getElementById("count");
+        var count = countDiv.innerHTML - 1;
+        countDiv.innerHTML = count;
+        if(count == 0) {
+          window.clearInterval(alarm1);
+          window.clearInterval(alarm2);
+        }
+      }, 1000);
+    };
+    </script>
+
+  </body>
+
+</html>

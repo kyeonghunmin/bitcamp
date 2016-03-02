@@ -1,0 +1,2 @@
+-d bin 
+-cp bin:lib/annotations-3.0.1u2.jar:lib/guava-18.0.jar:lib/javassist-3.20.0-GA.jar:lib/reflections-0.9.10.jar
