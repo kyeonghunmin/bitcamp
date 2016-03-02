@@ -423,11 +423,11 @@ i = i++;    // 이 전체를 명령문(statement)이라고 한다.
 
 // 2.29(월)
 *** git 설정하는 법
-github에서 Repository 만들기
-로컬에서 폴더 만들기
-(   git init??   )
-git commit -m "first commit"
-git push origin master
+1) github에서 Repository 만들기
+2) git init
+3) git add -A
+4) git commit -m "first commit"
+5) git push origin master
 
 
 
