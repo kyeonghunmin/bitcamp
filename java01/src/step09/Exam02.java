@@ -13,8 +13,9 @@ public class Exam02 {
 
   public static void main(String[] args) {
     Score[] scores = new Score[3];// 인스턴스 주소를 저장할 레퍼런스 변수 3개 생성
-
-    scores[0] = new Score();  // 인스턴스 생성
+                              // new 명령을 통해 생성된 메모리는 모두 Heap에 생성됨
+                              // 레퍼런스 변수 scores 만 stack에 생성됨
+    scores[0] = new Score();  // 인스턴스 생성 (모든 인스턴스는 Heap에 생성됨)
     scores[0].name = "홍길동";
     scores[0].kor = 100;
     scores[0].eng = 90;
