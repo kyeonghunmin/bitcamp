@@ -20,7 +20,7 @@ public class Exam11 {
     // 4) r1 = 33, i = 13
 
     i = 10;
-    i = i++;
+    i = i++;    // i++자리에 10을 두고 i를 11로 증가시키고 먼저 두었던 10을 i에 다시 넣는다.
     System.out.println(i);
   }
 }

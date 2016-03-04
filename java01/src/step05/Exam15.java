@@ -16,7 +16,7 @@ public class Exam15 {
     for (int i = 0; i < 10; i++) {
       if (i == 5)
         continue;    // 다음 문장을 실행하지 않고 증가/감소 문으로 이동한다.
-    System.out.println(i);
+      System.out.println(i);
     }
 
   }

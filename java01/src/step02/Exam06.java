@@ -8,7 +8,7 @@ public class Exam06 {
     arr[0] = 10;
     arr[1] = 20;
     arr[2] = 30;
-    //arr[3] = 40;  // 컴파일은 되지만, 실행은 불가 // 유효한 인덱스가 아님
+    //arr[3] = 40;  // 컴파일은 되지만, 실행은 불가 (유효한 인덱스가 아님)
 
     System.out.println(arr[2]);
     //System.out.println(arr[10]);    // 실행할 때(Runtime) 오류(Exception)

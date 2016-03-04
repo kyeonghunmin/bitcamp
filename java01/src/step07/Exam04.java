@@ -18,14 +18,14 @@ public class Exam04 {
     //    일반적으로 변수를 뺀 "레퍼런스" 라고 부른다.
 
     // 1) 레퍼런스 변수 준비
-    Calculator3 calc1;
+    Calculator3 calc1;    // stack에 생성된다.
     Calculator3 calc2;
 
     // 2) 인스턴스 변수를 담은 인스턴스(object)을 준비
-    calc1 = new Calculator3();
+    calc1 = new Calculator3();    // heap에 생성된다.
     calc2 = new Calculator3();
 
-    Calculator3.plus(calc1, 2);
+    Calculator3.plus(calc1, 2);   // calc1에 담긴 주소와 2라는 값을 넘긴다.
     Calculator3.plus(calc2, 3);
 
     Calculator3.multiple(calc1, 3);

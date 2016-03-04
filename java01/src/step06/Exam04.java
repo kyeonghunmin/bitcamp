@@ -7,7 +7,7 @@ public class Exam04 {
   static String hello(String localeCode) {      // localeCode : parameter
     switch (localeCode) {  // String hello(String localeCode) : 메서드 시그너쳐
       case "ko_KR":
-        return "안녕하세요";
+        return "안녕하세요";   // return : 현재 메서드를 종료한다.
       case "ja_JP":
         return "こんにちは";
       case "zh_CN":

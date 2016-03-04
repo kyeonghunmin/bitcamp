@@ -4,7 +4,8 @@ package step05;
 public class Exam13 {
   public static void main(String[] args) {
     int[] scores = {100, 60, 70, 0};
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < 3; i++) { // i <= 2 도 가능하지만 < 만 사용하면
+                                  // 3이 반복 횟수를 의미하게 되어 직관적이게 된다.
       scores[3] += scores[i];
     }
     System.out.println(scores[3]);

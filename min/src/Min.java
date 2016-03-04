@@ -1,12 +1,17 @@
 public class Min {
+  static int digitSum(int n) {
+    int result = 0;
+
+    while ((n != 0) {
+      result += (n % 10);
+      n /= 10;
+    }
+
+    return result;
+  }
   public static void main(String[] args) {
 
-    Calculator calc1 = new Calculator();
+    System.out.println(digitSum(323));
 
-    calc1.plus(2);
-    calc1.multiple(3);
-    calc1.plus(6);
-    calc1.minus(7);
-    System.out.println(calc1.result);
   }
 }

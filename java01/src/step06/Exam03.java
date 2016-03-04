@@ -5,7 +5,7 @@ public class Exam03 {
 
   // 값을 리턴하는 메서드 정의하기
   static String hello() {               // static이 기본이다.
-    return "안녕하세요";
+    return "안녕하세요";   // 상수풀에 만들어지고 그 주소를 리턴한다.
   }
 
   public static void main(String[] args) {

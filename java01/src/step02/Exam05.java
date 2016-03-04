@@ -5,7 +5,7 @@ public class Exam05 {
   public static void main(String[] args) {
     int kor, eng, math;
 
-    // 배열 선언
+    // 배열 선언, new로 생성했기 때문에 Heap에 생성된다.
     int[] scores = new int[3];            // 4byte * 3
     char[] chars = new char[10];          // 2byte * 10
     boolean[] tf = new boolean[5];        // -byte * 5 (1byte * 5)

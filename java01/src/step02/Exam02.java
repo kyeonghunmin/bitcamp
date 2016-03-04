@@ -3,7 +3,7 @@ package step02;
 
 public class Exam02 {
   public static void main(String[] args) {
-    int v1;
+    int v1;   // v1이 메모리가 아니다. (메모리를 만들라는 명령어) (stack에 생성)
     v1 = 20;
 
     int v2 = 20;

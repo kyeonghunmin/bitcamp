@@ -22,7 +22,7 @@ public class Exam02 {
 4) [Method Area] main()의 int a = 20; 명령 실행한다.
    [Stack] a 변수에 20 값을 저장한다.
 5) [Method Area] MyClass.class를 로딩한다.
-6) [Method Area] MyClass의 스태틱 변수(sValue)를 준비한다.
+6) [Method Area] MyClass의 스태틱 변수(sValue)를 준비한다. // static 변수가 있으면 자동으로 로딩됨.
 7) [Method Area] main()의 MyClass.sValue = a; 명령을 실행한다.
    => Stack 메모리에 있는 a의 값을 Method Area에 있는 sValue에 저장한다.
 8) [Method Area] main()의 System.out.println(); 명령을 실행한다.

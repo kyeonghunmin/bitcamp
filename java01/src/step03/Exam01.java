@@ -9,9 +9,12 @@ public class Exam01 {
                               // new char[5], int length 등이 담겨져 있어서
                               // 이러한 명령들을 통해 Hello를 저장하게 된다.
                               // new String("Hello")와 같다.
+                              // 상수풀에 생성된다. (데이터 중복 허용 X)
 
     // new 명령을 사용하여 명시적으로 String 물건을 만들기
     String s2 = new String("Hello");    // 2개 모두 사용가능하다.
+                                        // Heap에 생성된다. (데이터 중복 허용 O)
+
 
     System.out.printf("%s %s\n", s1, s2);
   }

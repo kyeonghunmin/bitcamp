@@ -5,7 +5,8 @@ public class Exam04 {
   public static void main(String[] args) {
     int a = 20;
     MyClass obj;  // 레퍼런스 변수를 선언할 때 클래스를 로딩하지 않는다.
-    obj = new MyClass();
+    obj = new MyClass();  // MyClass()에서 인스턴스 변수를 찾아보고 있으면 Heap에
+                          // 인스턴스 변수(iValue)의 메모리를 준비한다.
     obj.setIValue(a);
     System.out.println(obj.iValue);
   }
