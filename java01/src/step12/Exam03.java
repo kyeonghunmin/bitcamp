@@ -30,7 +30,7 @@ public class Exam03 {
     Exam03.staticMethod();
     // 인스턴스 주소 없이는 인스턴스 변수에 접근할 수 없다.
     // main()도 스태틱이기 때문에 인스턴스 변수에 접근할 수 없다.
-    instanceValue = 5000; // error
+    // instanceValue = 5000; // error
 
     // 인스턴스 메서드는 인스턴스 주소 없이 호출할 수 없다.
     // Exam03.instanceMethod(); // error

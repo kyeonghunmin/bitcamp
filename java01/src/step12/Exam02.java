@@ -23,7 +23,7 @@ public class Exam02 {
   public static void main(String[] args) {
     Exam02.staticValue = 5000;
     staticValue = 6000;
-
+    System.out.println(staticValue);
   }
 }
 
