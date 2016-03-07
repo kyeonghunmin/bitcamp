@@ -469,7 +469,9 @@ i = i++;    // 이 전체를 명령문(statement)이라고 한다.
 6) 모든 명령을 실행한 후 stack에 준비된 로컬 변수들의 메모리를 제거한다.
 
 
-
+// 3.7(월)
+Value Object (vo)
+Data Transfer Object (DTO)
 
 
 
