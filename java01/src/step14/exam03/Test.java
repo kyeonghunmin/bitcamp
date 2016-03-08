@@ -1,5 +1,4 @@
-/* 주제 : 상속 - Generalization (일반화)
-*/
+// 주제 : 상속 - Generalization (일반화)
 
 package step14.exam03;
 

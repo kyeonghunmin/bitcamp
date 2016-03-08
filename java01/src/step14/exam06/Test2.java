@@ -1,4 +1,5 @@
 // 주제 : 상속 관계에서 인스턴스 변수 초기화 순서와 생성자 호출 순서
+
 package step14.exam06;
 
 public class Test2 {
@@ -11,6 +12,7 @@ public class Test2 {
     System.out.println(p.v5);
   }
 }
+
 /*
 상속 관계에서 생성자 호출
 - 모든 생성자는 첫번째 줄에 수퍼 클래스의 기본 생성자를

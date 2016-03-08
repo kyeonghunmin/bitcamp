@@ -1,4 +1,5 @@
 // 주제 : 수퍼 클래스에 기본 생성자가 없을 때 오류 발생하는 상황
+
 package step14.exam09;
 
 public class Test {
@@ -11,6 +12,3 @@ public class Test {
     System.out.println(p.v5);
   }
 }
-/*
-
-*/

@@ -1,5 +1,4 @@
-/* 주제 :
-*/
+// 주제 : 상속 - Generalization (일반화) - 추상 클래스
 
 package step14.exam04;
 

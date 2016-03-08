@@ -1,5 +1,5 @@
-/* 주제 : 상속 - Specialization(특화)
-*/
+// 주제 : 상속 - Specialization(특화)
+
 package step14.exam02;
 
 public class Test {

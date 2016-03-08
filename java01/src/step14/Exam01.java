@@ -1,5 +1,5 @@
-/* 주제 : 상속
-*/
+// 주제 : 상속
+
 package step14;
 
 public class Exam01 {

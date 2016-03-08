@@ -1,4 +1,5 @@
 // 주제 : 수퍼 클래스의 다른 생성자를 호출하는 상황
+
 package step14.exam09;
 
 public class Test2 {
@@ -11,6 +12,3 @@ public class Test2 {
     System.out.println(p.v5);
   }
 }
-/*
-
-*/

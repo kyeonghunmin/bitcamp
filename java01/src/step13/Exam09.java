@@ -1,5 +1,4 @@
-/* 주제 : final
-*/
+// 주제 : final
 
 package step13;
 
@@ -16,6 +15,8 @@ public class Exam09 {
   }
 }
 
-/* 로컬 변수에 final 붙임
+/*
+로컬 변수에 final 붙임
 - 한 번만 할당할 수 있다.
 */
+                                                                
