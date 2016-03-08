@@ -10,7 +10,7 @@ public class Exam02 {
 
     // auto-unboxing => 랩퍼 클래스의 인스턴스 값을 원시 타입 값으로 자동 리턴한다.
     Integer i2 = new Integer(100);
-    int v1 = i2;  // i2.intValue(); 와 같다.
+    int v1 = i2;  // 내부적으로 i2.intValue(); 로 동작한다.
 
   }
 }

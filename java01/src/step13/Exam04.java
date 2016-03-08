@@ -11,6 +11,8 @@ public class Exam04 {
     Date today = new Date(currTime);
 
     System.out.println(today);  // YYYY-MM-DD
+    // println(값); 에서 값이 primitive가 아닐 경우 toString()을 실행하여
+    // 받은 값을 출력하게 된다.
 
     // java.sql.Date 클래스를 주로 사용하는 경우
     // "yyyy-mm-dd" --> Date 인스턴스

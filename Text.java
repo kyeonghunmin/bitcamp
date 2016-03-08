@@ -475,6 +475,23 @@ Data Transfer Object (DTO)
 
 
 
+// 3.8(화)
+* jar 파일 만들기 (클래스파일을 사용)
+jar cvf calc.jar step14/Calculator.class
+
+* jar 파일에 있는 클래스를 사용하기
+javac -cp libs/calc.jar -d bin -sourcepath src src/step14/Exam01.java
+java -cp bin:libs/calc.jar step14.Exam01
+
+*
+클래스 정의 ("추상화")
+1) 상속 -> 코드 재사용성을 증가시킴.
+
+2) 캡슐화 -> 무효한 데이터가 입력되는 것을 막아 추상화 개념을 보존하는 것.
+- public, protected, (default), private
+
+3) 다형성 -> 유연한 코드를 작성할 수 있게 도와줌.
+- overloading, overriding, 다형적 변수
 
 
 

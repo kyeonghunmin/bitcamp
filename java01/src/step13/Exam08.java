@@ -12,6 +12,7 @@ public class Exam08 {
 
     System.out.println(name);
     System.out.println(age);
+    // System. 클래스는 JVM이 수행하는 작업과 관련된 것들이 담겨있다.
   }
 }
 
