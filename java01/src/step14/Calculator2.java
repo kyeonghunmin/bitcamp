@@ -15,4 +15,19 @@ public class Calculator2 extends Calculator {
   public void remainder(int a) {
     this.result %= a;
   }
+
+  // protected : 같은 패키지와 자식 클래스는 접근 가능하다.
+  protected int abs() {
+    return (result < 0) ? -result : result;
+  }
+
+  // (default) : 같은 패키지만 접근 가능
+  int abs2() {
+    return (result < 0) ? -result : result;
+  }
+
+  // private : 클래스 안에서만 접근 가능
+  private int abs3() {
+    return (result < 0) ? -result : result;
+  }
 }

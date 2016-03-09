@@ -495,6 +495,97 @@ java -cp bin:libs/calc.jar step14.Exam01
 
 
 
+// 3.9(수)
+*
+Class
+  1. 변수
+    - 스태틱
+    - 인스턴스
+
+  2. 메서드
+    - 스태틱
+    - 인스턴스
+
+=> 클래스 정의 (추상화)
+   - 메서드를 묶음
+   - 사용자 정의 데이터 타입
+
+=> 생성자
+   - super(), 인스턴스 블록(스태틱 블록)
+
+=> 캡슐화
+   - 추상화를 유지시키는 문법 (유효한 값을 유지시키는 문법)
+   - public, private, (default), protected
+
+=> 재사용
+   상속
+     - Specialization (상위->하위)
+     - Generalization (하위->상위) --> Abstract (추상클래스)
+     - 다형성
+       -> Overriding, Overloading, 다형적 변수
+     - super, this
+
+
+*
+- UML (Unified Modeling Language)
+1) Class Diagram : 클래스 간의 관계를 표현
+   - 클래스 표현
+     - 클래스는 사각형으로 표현
+     - 변수명:타입 // (자바와 순서가 반대)
+     - 메서드명(파라미터명:타입):리턴타입
+   - 관계
+     - 1) 상속
+        Calculator  (수퍼/부모 클래스)
+            ^
+            |
+        Calculator2 (서브/자식 클래스) (위쪽 화살표로 표현)
+        // class CalculatorPlus extends Calculator {}
+
+     - 2) Association (연관) - 지속적인 관계
+          Test --> Calculator (화살표로 표현)
+          // 인스턴스 변수나 스태틱 변수에 담아둔다.
+          // class Test {
+               Calculator p;
+             }
+
+     - 3) Aggregation (집합) - 포함관계
+          Computer ◇----> Mouse
+          // class Computer {     // Association과 같다.
+               Mouse p;
+             }
+          부모와 자식의 생명주기(Lifecycle)가 일치하지 않음
+
+     - 4) Composition (합성) - 포함관계
+          PhoneMainboard ◆----> CPU
+          (Container)          (Containee)
+          // class PhoneMainboard {
+               CPU p;
+             }
+          부모와 자식의 생명주기(Lifecycle)가 일치함
+
+     - 5) Dependency (의존) - 특정 메서드에서만 사용
+          학생 - - - -> 강사  (점선으로 표현)
+          // class 학생 {
+               void m() {
+               강사 p = new 강사();
+               }
+             }
+
+2) Sequence Diagram : 시간 흐름에 따른 객체 간의 상호작용을 표현
+3) Collaborator Diagram : 공간에 객체를 배치하여 참여 객체의 관계를 표현
+4) State Diagram : 객체 상태 변화를 표현
+5) Use Case Diagram : 사용자(Actor)의 요구사항
+* 관련책 - UML, 실전에서는 이것만 쓴다
+
+
+
+
+
+
+
+
+
+
 
 
 
