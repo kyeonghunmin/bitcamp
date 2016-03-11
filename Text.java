@@ -586,10 +586,18 @@ Class
 
 
 
+// 3.11(금)
+* 기술부채
+- 동작하기 위한 코드를 작성한 후 Refactoring을 통한 구조 조정을 하지않고
+  새로운 기술이 계속 추가된 상태
 
 
+* dependency (의존)
+ProjectApp ---> MemberController ---> Scanner
+- ProectApp은 MemberController에 의존한다. (의존객체)
+  MemberController는 Scanner에 의존한다. (의존객체)
 
-
+DI (Dependency Injection) - 의존객체 주입
 
 
 
