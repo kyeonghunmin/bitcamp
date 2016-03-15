@@ -22,7 +22,7 @@ public class Stack {
     }
     Bucket cursor = top;
     top = top.next;
-    //count--;
+    count--;
     return cursor.value;
   }
 
