@@ -17,19 +17,21 @@ public class Queue {
   public void put(Object value) {
     rear.value = value;
     Bucket emptyBucket = new Bucket();
-    rear.next = emptyBucket;
+    rear.prev = emptyBucket;
     rear = emptyBucket;
     count++;
   }
 
   public Object poll() {
-    if (count == 0) {
+    if(count == 0) {
       return null;
     }
 
-    Object cursor = front.value;
-    front = front.next;
+    Object oldValue = front.value;
+    front = front.prev;
     count--;
-    return cursor;
+    return oldValue;
   }
+
+
 }

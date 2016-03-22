@@ -2,13 +2,13 @@ package algorithm.ex03;
 
 public class Bucket {
   Object value;
-  Bucket next;
+  Bucket prev;
 
   public Bucket() {
   }
 
-  public Bucket(Object value, Bucket next) {
+  public Bucket(Object value, Bucket prev) {
     this.value = value;
-    this.next = next;
+    this.prev = prev;
   }
 }

@@ -3,28 +3,23 @@ package bitcamp.pms;
 import java.util.Scanner;
 import bitcamp.pms.controller.MemberController;
 import bitcamp.pms.controller.ProjectController;
-import bitcamp.pms.controller.TaskController;
 
 public class ProjectApp {
   static Scanner keyScan = new Scanner(System.in);
   static MemberController memberController = new MemberController();
   static ProjectController projectController = new ProjectController();
-  static TaskController taskController = new TaskController();
 
   public static void main(String[] args) {
-    memberController.setScanner(keyScan);
+    memberController.setScanner(keyScan); // <-- 의존 객체 주입
     projectController.setScanner(keyScan);
-    taskController.setScanner(keyScan);
 
-
-    String input = null;
-
+    String input;
     do {
       input = prompt();
       processCommand(input);
     } while (!input.equals("quit"));
 
-    keyScan.close();
+    keyScan.close(); // 항상 다 쓴 자원은 해제해야 한다.
   }
 
   static void processCommand(String input) {
@@ -51,7 +46,7 @@ public class ProjectApp {
   }
 
   static void doError() {
-    System.out.println("잘못된 명령어입니다.");
+    System.out.println("올바르지 않은 명령어입니다.");
   }
 
   static void doAbout() {
@@ -72,11 +67,9 @@ public class ProjectApp {
       case "project":
         projectController.service();
         break;
-      case "task":
-        taskController.service();
-        break;
       default:
         System.out.println("없는 메뉴입니다.");
     }
+
   }
 }
