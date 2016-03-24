@@ -1,15 +1,53 @@
 package bitcamp.pms.controller;
 
 import java.util.Scanner;
-import bitcamp.pms.domain.Member;
 import java.util.ArrayList;
+import bitcamp.pms.domain.Member;
+import java.io.FileWriter;
+import java.io.BufferedWriter;
+import java.io.PrintWriter;
+import java.io.FileReader;
+import java.io.BufferedReader;
 
 public class MemberController {
+  private static final String filename = "member.data";
   private Scanner keyScan;
   private ArrayList<Member> members;
 
-  public MemberController() {
+  public MemberController() throws Exception {
     members = new ArrayList<>();
+    load();
+  }
+
+  public void load() throws Exception {
+    FileReader in0 = new FileReader(filename);
+    BufferedReader in = new BufferedReader(in0);
+
+    String line;
+    String[] values;
+    Member member;
+    while ((line = in.readLine()) != null) {
+      values = line.split(",");
+      member = new Member(values[0], values[1], values[2], values[3]);
+      members.add(member);
+    }
+
+    in.close();
+    in0.close();
+  }
+
+  public void save() throws Exception {
+    FileWriter out0 = new FileWriter(filename);
+    BufferedWriter out1 = new BufferedWriter(out0);
+    PrintWriter out = new PrintWriter(out1);
+
+    for (Member member : members) {
+      out.println(member);
+    }
+
+    out.close();
+    out1.close();
+    out0.close();
   }
 
   public void setScanner(Scanner keyScan) {

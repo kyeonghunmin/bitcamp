@@ -15,6 +15,12 @@ public class Member {
     this.tel = tel;
   }
 
+  @Override
+  public String toString() {
+    return this.name + "," + this.email + "," +
+            this.password + "," + this.tel;
+  }
+
   public String getName() {
     return this.name;
   }
@@ -39,12 +45,4 @@ public class Member {
   public void setTel(String tel) {
     this.tel = tel;
   }
-
-  @Override
-  public String toString() {
-    return this.name + ", " + this.email + ", " +
-            this.password + ", " + this.tel;
-  }
-
-
 }

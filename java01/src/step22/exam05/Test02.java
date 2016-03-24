@@ -5,6 +5,7 @@ package step22.exam05;
 import java.io.File;
 import java.io.IOException;
 import java.io.FileInputStream;
+import java.io.DataInputStream;
 
 public class Test02 {
   public static void main(String[] args) throws IOException {

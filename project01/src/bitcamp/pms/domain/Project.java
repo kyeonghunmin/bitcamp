@@ -22,7 +22,7 @@ public class Project {
   @Override
   public String toString() {
     return this.title + "," + this.startDate + "," +
-    this.endDate + "," + this.state;
+    this.endDate + "," + this.state + "," + this.description;
   }
 
   public String getTitle() {
