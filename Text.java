@@ -700,7 +700,55 @@ read()  : 맨 끝 1바이트만 읽는다.
 
 
 
+// 3.25 (금)
+* 이클립스 설치
+- properties : java로 설정
+- window - show view - navigator 추가
+- window - preference
+  Appearence - color ~ : 폰트 설정
+  Editors - Text editors :tab width(2)
+                          insert spaces 체크
+                          show print margin(80) 체크
+  workspace - utf8 확인
+  java - code style - formatter : new => bitcamp
+                                  space only, 2, 2 설정
+  compiler : 1.8버전 확인
+  installed jre : location 부분 확인
+  web : css, html, jsp file 부분 utf8 확인
 
+
+* gradle
+터미널 -> java01로 이동 -> [gradle -v] 로 버전확인
+java01에 build.gradle 파일 만들기 -> 밑에 내용 입력 ->
+터미널 -> java01에서 [gradle eclipse], project01에 build.gradle 복사 후 [gradle eclipse]
+******************************************
+//Gradle 설정 파일(build.gradle)
+
+// 1) 사용할 gradle 플러그인 가져오기
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+// 2) 자바 소스 폴더 지정
+// => 지정하지 않으면 다음 구조로 간주한다.
+//   src/
+//     main/
+//       java/
+//       resources/
+//     test/
+//       java/
+//       resources/
+// => src 폴더에 자바 소스 파일을 바로 두도록 설정을 변경한다.
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+        }
+        resources {
+            srcDir 'src'
+        }
+    }
+}
+****************************************
 
 
 

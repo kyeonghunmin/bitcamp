@@ -11,6 +11,11 @@ public class HelloJp extends AbstractHello {
     list.add("こんばんは");
   }
 
+  @Override
+  public String greet() {
+    return sayHello();
+  }
+  // 기존에 이미 사용한 경우를 대비해서 제거하지 않은 경우
   public String sayHello() {
     Calendar cal = Calendar.getInstance(); // Canlendar 인스턴스를 가져온다.
     // cal : 현재 날짜와 시간 정보를 담을 변수

@@ -8,15 +8,15 @@ import java.io.BufferedWriter;
 import java.io.PrintWriter;
 import java.io.FileReader;
 import java.io.BufferedReader;
+import java.util.Map;
 
-public class MemberController {
+public class MemberController implements MenuController {
   private static final String filename = "member.data";
   private Scanner keyScan;
   private ArrayList<Member> members;
 
-  public MemberController() throws Exception {
+  public MemberController() {
     members = new ArrayList<>();
-    load();
   }
 
   public void load() throws Exception {
@@ -50,11 +50,18 @@ public class MemberController {
     out0.close();
   }
 
-  public void setScanner(Scanner keyScan) {
-    this.keyScan = keyScan;
+  @Override
+  public void init() {  // 프로그램을 위한 자원을 준비하는 메서드
+    try {
+      this.load();
+    } catch (Exception e) {
+      throw new RuntimeException("회원 데이터 로딩 실패", e);
+    }
   }
 
-  public void service() {
+  @Override // 추상 메서드를 구현하는 것도 Override이다.
+  public void service(Map<String,Object> paramMap) {
+    keyScan = (Scanner)paramMap.get("stdin");
     String input = null;
     do {
       input = prompt();
@@ -72,6 +79,13 @@ public class MemberController {
         System.out.println("유효하지 않은 인덱스입니다.");
       }
     } while (!input.equals("main"));
+  }
+
+  @Override
+  public void destroy() { // 프로그램 종료시 사용했던 자원을 해제하는 메서드
+    try {
+      this.save();
+    } catch (Exception e) {}  // 예외 무시
   }
 
   private String prompt() {
