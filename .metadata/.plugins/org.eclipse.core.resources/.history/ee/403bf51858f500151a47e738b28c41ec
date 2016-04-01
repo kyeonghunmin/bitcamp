@@ -1,0 +1,11 @@
+// 기본 값을 지정할 수 있다
+
+package step27.exam05;
+
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+
+@Retention(RetentionPolicy.RUNTIME)
+public @interface Component {
+  String value() default "haha";
+}

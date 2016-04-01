@@ -1,0 +1,8 @@
+// Responsibility(or Role)
+// => 객체를 준비하고 관리한다.
+// => 객체(instance) --> 자바에서는 "bean" 이라고 부른다.
+package bitcamp.pms.context;
+
+public class ApplicationContext {
+
+}

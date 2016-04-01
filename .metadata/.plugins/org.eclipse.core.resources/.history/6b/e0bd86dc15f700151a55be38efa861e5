@@ -1,0 +1,15 @@
+package bitcamp.pms.controller;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import bitcamp.pms.domain.Member;
+
+public class MemberController {
+  private Scanner keyScan;
+  private ArrayList<Member> members;
+  
+  public MemberController() {
+    members = new ArrayList<>();
+  }
+}

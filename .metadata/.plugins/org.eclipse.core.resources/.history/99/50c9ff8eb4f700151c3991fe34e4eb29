@@ -1,0 +1,14 @@
+package bitcamp.pms.context.request;
+
+import java.util.HashMap;
+
+import bitcamp.pms.context.ApplicationContext;
+
+public class RequestHandlerMapping {
+  ApplicationContext appContext;
+  HashMap<String,RequestHandler> handlerMap = new HashMap<>();
+  
+  public RequestHandlerMapping(ApplicationContext appContext) {
+    this.appContext = appContext;
+  }
+}

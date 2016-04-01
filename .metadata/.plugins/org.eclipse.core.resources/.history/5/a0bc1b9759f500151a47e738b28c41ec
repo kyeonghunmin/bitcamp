@@ -1,0 +1,11 @@
+package step27.exam07;
+
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+
+@Retention(RetentionPolicy.RUNTIME)
+public @interface Component {
+  String value() default "haha";
+  String title();
+  int no() default 100;
+}

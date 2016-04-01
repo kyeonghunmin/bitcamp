@@ -1,0 +1,8 @@
+// 애노테이션 정의
+// => value라는 속성을 가지고 있다.
+
+package step27.exam01;
+
+public @interface Component {
+  int value();
+}

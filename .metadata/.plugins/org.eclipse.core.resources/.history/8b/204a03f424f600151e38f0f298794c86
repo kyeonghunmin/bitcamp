@@ -1,0 +1,15 @@
+// 커맨드 패턴 : 각 메서드를 작은 클래스로 정의한다.
+// 
+
+package designpattern.command.exam04;
+
+public class Test {
+
+  public static void main(String[] args) {
+    Calculator c = new Calculator();
+    c.plus(10, 20);
+    c.minus(10, 20);
+
+  }
+
+}

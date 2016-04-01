@@ -24,3 +24,16 @@ sourceSets {
         }
     }
 }
+
+// 3) 의존 라이브러리를 다운로드 받을 서버를 지정한다.
+repositories {
+    mavenCentral()    // 메이븐 중앙 서버 지정  
+}
+
+// 4) 사용할 의존 라이브러리를 지정한다.
+// => 라이브러리 이름을 알아내는 방법 => www.mvnrepository.com 사이트에서 검색하라
+//                                       apache bcel 검색 --> gradle 복사하여 붙여넣기
+dependencies {
+  // 사용법 => compile '라이브러리그룹명:이름:버전'
+  compile 'org.apache.bcel:bcel:5.2' 
+}

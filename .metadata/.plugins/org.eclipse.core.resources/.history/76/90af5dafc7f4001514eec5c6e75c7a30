@@ -1,0 +1,22 @@
+package step25;
+
+public class Test03 {
+  static class Member {
+    public static int count;
+    String name;
+
+    public String getName() {
+      return name;
+    }
+
+    public void setName(String name) {
+      this.name = name;
+    }
+  }
+  
+  public static void main(String[] args) {
+    Class clazz = Class.forName("step25.Test03$Member");
+    
+    Member m = (Member)clazz.newInstance();
+  }
+}

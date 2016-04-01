@@ -1,0 +1,67 @@
+package bitcamp.pms.controller;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.Scanner;
+
+import bitcamp.pms.annotation.Component;
+import bitcamp.pms.domain.Member;
+
+@Component("member/list.do")
+public class MemberListController implements MenuController {
+  private static final String filename = "member.data";
+  private Scanner keyScan;
+  private ArrayList<Member> members;
+
+  public MemberListController() {
+    members = new ArrayList<>();
+  }
+
+  public void load() throws Exception {
+    FileReader in0 = new FileReader(filename);
+    BufferedReader in = new BufferedReader(in0);
+
+    String line;
+    String[] values;
+    Member member;
+    while ((line = in.readLine()) != null) {
+      values = line.split(",");
+      member = new Member(values[0], values[1], values[2], values[3]);
+      members.add(member);
+    }
+
+    in.close();
+    in0.close();
+  }
+
+  @Override
+  public void init() {  // 프로그램을 위한 자원을 준비하는 메서드
+  }
+
+  @Override // 추상 메서드를 구현하는 것도 Override이다.
+  public void service(Map<String,Object> paramMap) {
+    keyScan = (Scanner)paramMap.get("stdin");
+    
+    try {
+      this.load();
+      
+      Member member = null;
+      for (int i = 0; i < members.size(); i++) {
+        member = members.get(i);
+        System.out.printf("%d, %s\n", i, member.toString());
+      }
+    } catch (Exception e) {
+      throw new RuntimeException("회원 데이터 로딩 실패", e);
+    }
+  }
+
+  @Override
+  public void destroy() { // 프로그램 종료시 사용했던 자원을 해제하는 메서드
+  }
+
+}

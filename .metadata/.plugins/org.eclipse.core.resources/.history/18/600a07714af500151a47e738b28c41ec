@@ -1,0 +1,25 @@
+package step26.exam04;
+
+import java.util.Date;
+
+public class Test3 {
+
+  public static void main(String[] args) {
+    Box<String> box1 = new Box<>();
+    Box<Integer> box2 = new Box<>();
+    Box<Date> box3 = new Box<>();
+    Box<Object> box4 = new Box<>();
+    
+    box1.setValue("문자열");
+    box2.setValue(20);
+    box3.setValue(new Date());
+    
+    
+    box4.setValue("문자열");
+    box4.setValue(20);  // auto-boxing
+    box4.setValue(new Date());
+    box4.setValue(true);  // auto-boxing
+    
+         
+  }
+}
