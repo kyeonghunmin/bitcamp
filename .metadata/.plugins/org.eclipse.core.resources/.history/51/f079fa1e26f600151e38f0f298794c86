@@ -1,5 +1,0 @@
-package designpattern.command.exam04;
-
-public interface Command {
-
-}

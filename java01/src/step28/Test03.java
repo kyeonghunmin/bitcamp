@@ -1,0 +1,34 @@
+// 주제 : 예외 처리와 연결 해제 2 - 연결 해제를 자동으로 하기
+
+package step28;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+import com.mysql.jdbc.Driver;
+
+public class Test03 {
+
+  public static void main(String[] args) throws Exception {
+    Connection con = null;
+    
+    try {
+      DriverManager.registerDriver(new Driver());
+  
+      con = DriverManager.getConnection(
+          "jdbc:mysql://localhost:3306/java80db?user=java80&password=1111");
+      
+      System.out.println("연결 성공!");
+      
+      System.out.printf("5 / 0 = %d\n", 5 / 0);
+      
+      System.out.println("맑은 날씨입니다.");
+      
+    } finally { // try 블록 안에서 나올 시 finally를 실행 후 나오게 된다.
+      try {con.close();} catch (Exception e) {} // close도 예외 처리를 해준다.
+      System.out.println("커넥션을 끊었습니다.");
+    }
+    
+  }
+
+}

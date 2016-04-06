@@ -1,6 +1,0 @@
-package step27.exam07;
-
-@Component(title="title...")
-public class Member {
-
-}

@@ -3,6 +3,7 @@ package bitcamp.pms.domain;
 import java.sql.Date;
 
 public class Board {
+  private int no;
   private String title;
   private String content;
   private int views;
@@ -11,14 +12,17 @@ public class Board {
 
   @Override
   public String toString() {
-    return title + "," + views + "," + createdDate + "," + password;
+    return "Board [no=" + no + ", title=" + title + ", content=" + 
+            content + ", views=" + views + ", password="
+            + password + ", createdDate=" + createdDate + "]";
   }
 
-  // GRASP (information expert)
-  // 보드의 정보를 다루는 toCSV는 Board 클래스에 둔 것.
-  public String toCSV() {
-    return String.format("%s,%s,%d,%s,%s", title, content,
-                                           views, password, createdDate);
+  public int getNo() {
+    return no;
+  }
+
+  public void setNo(int no) {
+    this.no = no;
   }
 
   public String getTitle() {

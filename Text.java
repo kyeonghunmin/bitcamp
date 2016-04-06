@@ -234,6 +234,7 @@ github.com/eomjinyoung => java76 -> https(주소) 복사 후 git폴더에서 [gi
         - show databases; (생성된 DB 확인)
         - create user 'java80'@'localhost' identified by '1111'; (localhost 사용자가 1111로 접속가능)
         - grant all on java80db.* to 'java80'; (권한지정)
+        - show variables like 'c%'; (utf-8 확인)
 
     - 테이블 생성       
         - mysql -u java80 -p (java80 사용자로 sql 접속)
@@ -749,6 +750,82 @@ sourceSets {
     }
 }
 ****************************************
+
+
+
+// 4.4 (월)
+* DBMS (DataBase Management System)
+  - Data I/O 처리 담당
+  - Data 저장 규칙에 따라 유효성 검사
+  - 프로그래밍 언어에 독립적
+  - SQL 이라는 일관된 명령 문법
+  - library(X) => 별도로 실행하는 소프트웨어
+  - 여러 요청을 동시에 처리할 수 있음
+  - 예) Oracle, MS-SQL, MySQL, , MariaDB, DB2(IBM), Tibero(Tmax), Altibase...
+
+* 직접 DBMS에 SQL 문을 보내는 code를 작성할 수 없다.
+  - 각 제조사의 통신 규칙이 비공개이기 때문.
+  - 각 제조사가 공급해주는 API를 "Vendor API" 라고 부른다.
+  - SQL (Structured Query Language) : DBMS에 명령을 내리는 표준 문법
+
+* Vendor API
+  - 벤더마다 API 명세가 다르다. => DBMS 별로 작성해야하는 단점. (유지보수 힘듬)
+    => ODBC(Open DataBase Connectivity) 등장 : API 명세를 통일함.  
+
+<각 호출(call) 관계>
+- JavaApp -> JDBC Driver -> 각 Vendor ODBC Driver -> 각 Vendor API(c/c++) -> DBMS
+
+* JDBC API(Java DataBase Connectivity) 명세
+Type1 : ODBC C/C++ API 호출한다.
+        JRE에 포함되어 있다.
+        속도가 느리다.
+        ODBC Driver가 있다면 접근 가능하다.
+        "ODBC-JDBC" Bridge 드라이버라고 부른다.
+
+Type2 : 중간 ODBC 구간을 거치지 않고 바로 각 Vendor API(Native API)를 호출한다.
+        JRE에 포함되어 있지 않다.
+        DBMS 별로 다운로드를 받아야 한다.
+        속도가 빠르다.
+        
+Type4 : 바로 DBMS를 호출한다. (DBMS와 직접 접속)
+        pure Java라고 부른다. (중간에 각 Vendor API를 거치지 않기 때문)
+        DBMS 별로 다운로드가 필요하다.
+        현업에서 가장 많이 사용하는 타입이다.
+        
+
+* DBMS 설치
+1) www.mysql.com -> [다운로드] -> APT Repository -> Ubuntu/Debian 다운로드 -> 설치
+2) www.mysql.com -> MySQL Connectors 클릭 -> Connector/J 클릭 -> 
+   Platform independent -> ZIP 파일 다운로드 -> 압축 해제 -> xxx.jar 복사 ->
+   workspace/java01/libs에 붙여넣기 -> eclipse에서 확인(F5)
+3) gradle 방식
+   mvnrepository.com 접속 -> mysql jdbc 검색 -> 
+   build.gradle 파일에 dependencies 부분에 추가 ('mysql:mysql-connector-java:5.1.38')
+   -> 터미널에서 workspace/java01에서 gradle eclipse (이클립스 관련 설정파일 재설정) 
+   
+
+
+// 4.5 (화)
+* Driver --> Connection --> Statement --> ResultSet
+       (준비)         (준비)        (준비)
+       
+com.mysql.jdbc.Driver --> com.mysql.jdbc.ConnectionImpl --> com.mysql.jdbc.StatementImpl --> com.mysql.jdbc.ResultSetImpl
+                    (리턴)                            (리턴)                           (리턴)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

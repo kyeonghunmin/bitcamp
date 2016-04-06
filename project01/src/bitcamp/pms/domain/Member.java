@@ -1,6 +1,7 @@
 package bitcamp.pms.domain;
 
 public class Member {
+  protected int no;
   protected String name;
   protected String email;
   protected String password;
@@ -8,7 +9,8 @@ public class Member {
 
   public Member() {}
 
-  public Member(String name, String email, String password, String tel) {
+  public Member(int no, String name, String email, String password, String tel) {
+    this.no = no;
     this.name = name;
     this.email = email;
     this.password = password;
@@ -17,10 +19,16 @@ public class Member {
 
   @Override
   public String toString() {
-    return this.name + "," + this.email + "," +
+    return this.no + "," + this.name + "," + this.email + "," +
             this.password + "," + this.tel;
   }
-
+ 
+  public int getNo() {
+    return no;
+  }
+  public void setNo(int no) {
+    this.no = no;
+  }
   public String getName() {
     return this.name;
   }

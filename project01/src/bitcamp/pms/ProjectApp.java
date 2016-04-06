@@ -58,6 +58,7 @@ public class ProjectApp {
         method.invoke(obj, args.toArray());
       } catch (Exception e) {
         System.out.print("명령 처리 중에 오류가 발생했습니다.");
+        e.printStackTrace();
       }
     }
   }

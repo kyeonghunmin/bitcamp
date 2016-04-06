@@ -1,11 +1,10 @@
 package bitcamp.pms.Dao;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.PrintWriter;
-import java.sql.Date;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,74 +13,138 @@ import bitcamp.pms.domain.Board;
 
 @Component
 public class BoardDao {
-  private static final String filename = "board.data";
-  
   public List<Board> selectList() throws Exception {
-    ArrayList<Board> boards = new ArrayList<>();
+    ArrayList<Board> list = new ArrayList<>();
     
-    FileReader in0 = new FileReader(filename);
-    BufferedReader in = new BufferedReader(in0);
-
-    String line;
-    String[] values;
-    Board board;
-    while ((line = in.readLine()) != null) {
-      values = line.split(",");
-      board = new Board();
-      board.setTitle(values[0]);
-      board.setContent(values[1]);
-      board.setViews(Integer.parseInt(values[2]));
-      board.setPassword(values[3]);
-      board.setCreatedDate(Date.valueOf(values[4]));
-      boards.add(board);
-    }
-
-    in.close();
-    in0.close();
+    Connection con = null;
+    Statement stmt = null;
+    ResultSet rs = null;
     
-    return boards;
-  }
-  
-  public void insert(Board board) throws Exception {
-    FileWriter out0 = new FileWriter(filename, true);
-    BufferedWriter out1 = new BufferedWriter(out0);
-    PrintWriter out = new PrintWriter(out1);
-
-    out.println(board.toCSV());
-
-    out.close();
-    out1.close();
-    out0.close();
-  }
-  
-  public void save(List<Board> boards) throws Exception {
-    FileWriter out0 = new FileWriter(filename);
-    BufferedWriter out1 = new BufferedWriter(out0);
-    PrintWriter out = new PrintWriter(out1);
-
-    for (Board board : boards) {
-      out.println(board.toCSV());
+    try {
+      Class.forName("com.mysql.jdbc.Driver");
+      con = DriverManager.getConnection(
+          "jdbc:mysql://localhost:3306/java80db", "java80", "1111");
+      stmt = con.createStatement();
+      rs = stmt.executeQuery("select * from BOARDS");
+      Board board = null;
+      
+      while (rs.next()) {
+        board = new Board();
+        board.setNo(rs.getInt("BNO"));
+        board.setTitle(rs.getString("TITLE"));
+        board.setContent(rs.getString("CONTS"));
+        board.setViews(rs.getInt("VWCNT"));
+        board.setPassword(rs.getString("PWD"));
+        board.setCreatedDate(rs.getDate("CDT"));
+        list.add(board);
+      }
+      return list;
+      
+    } finally {
+      try {rs.close();} catch (Exception e) {}
+      try {stmt.close();} catch (Exception e) {}
+      try {con.close();} catch (Exception e) {}
     }
-
-    out.close();
-    out1.close();
-    out0.close();
   }
   
   public Board selectOne(int no) throws Exception {
-    List<Board> boards = this.selectList();
-    return boards.get(no);
+    
+    Connection con = null;
+    PreparedStatement stmt = null;
+    ResultSet rs = null;
+    
+    try {
+      Class.forName("com.mysql.jdbc.Driver");
+      con = DriverManager.getConnection(
+          "jdbc:mysql://localhost:3306/java80db", "java80", "1111");
+      stmt = con.prepareStatement("select * from BOARDS where BNO=?");
+      stmt.setInt(1,  no);
+      rs = stmt.executeQuery();
+            
+      if (rs.next()) {
+        Board board = new Board();
+        board.setNo(rs.getInt("BNO"));
+        board.setTitle(rs.getString("TITLE"));
+        board.setContent(rs.getString("CONTS"));
+        board.setViews(rs.getInt("VWCNT"));
+        board.setPassword(rs.getString("PWD"));
+        board.setCreatedDate(rs.getDate("CDT"));
+        return board;
+      }
+      return null;
+      
+    } finally {
+      try {rs.close();} catch (Exception e) {}
+      try {stmt.close();} catch (Exception e) {}
+      try {con.close();} catch (Exception e) {}
+    }
   }
   
-  public void update(int no, Board board) throws Exception {
-    List<Board> boards = this.selectList();
-    boards.set(no, board);
-    this.save(boards);
+  public int insert(Board board) throws Exception {
+    Connection con = null;
+    PreparedStatement stmt = null;
+    
+    try {
+      Class.forName("com.mysql.jdbc.Driver");
+      con = DriverManager.getConnection(
+          "jdbc:mysql://localhost:3306/java80db", "java80", "1111");
+      stmt = con.prepareStatement("insert into BOARDS(TITLE,CONTS,PWD,CDT)"
+          + " values(?,?,?,now())");
+      
+      stmt.setString(1,  board.getTitle());
+      stmt.setString(2,  board.getContent());
+      stmt.setString(3,  board.getPassword());
+      
+      return stmt.executeUpdate();
+      
+    } finally {
+      try {stmt.close();} catch (Exception e) {}
+      try {con.close();} catch (Exception e) {}
+    }
   }
   
-  public void delete(int no) throws Exception {
-    List<Board> boards = this.selectList();
-    boards.remove(no);
-    this.save(boards);
+  public int update(Board board) throws Exception {
+    Connection con = null;
+    PreparedStatement stmt = null;
+    
+    try {
+      Class.forName("com.mysql.jdbc.Driver");
+      con = DriverManager.getConnection(
+          "jdbc:mysql://localhost:3306/java80db", "java80", "1111");
+      
+      stmt = con.prepareStatement("update BOARDS set TITLE=?, CONTS=?, CDT=now() where BNO=?");
+      
+      stmt.setString(1, board.getTitle());
+      stmt.setString(2, board.getContent());
+      stmt.setInt(3, board.getNo());
+      
+      return stmt.executeUpdate();
+      
+    } finally {
+      try {stmt.close();} catch (Exception e) {}
+      try {con.close();} catch (Exception e) {}
+    }
+  }
+  
+  public int delete(int no) throws Exception {
+    Connection con = null;
+    PreparedStatement stmt = null;
+    
+    try {
+      Class.forName("com.mysql.jdbc.Driver");
+      con = DriverManager.getConnection(
+          "jdbc:mysql://localhost:3306/java80db", "java80", "1111");
+      
+      stmt = con.prepareStatement("delete from BOARDS where BNO=?");
+      stmt.setInt(1,  no);
+      
+      return stmt.executeUpdate();
+      
+    } finally { 
+      try {stmt.close();} catch (Exception e) {}
+      try {con.close();} catch (Exception e) {}
+    }
+  
   }
 }
+  

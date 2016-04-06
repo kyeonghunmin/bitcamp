@@ -3,28 +3,25 @@ package bitcamp.pms.domain;
 import java.sql.Date;
 
 public class Project {
+  private int no;
   private String title;
   private Date startDate;
   private Date endDate;
   private String description;
   private int state;
 
-  public Project() {
-
-  }
-
-  public Project(String title, Date startDate, Date endDate) {
-    this.title = title;
-    this.startDate = startDate;
-    this.endDate = endDate;
-  }
-
   @Override
   public String toString() {
-    return this.title + "," + this.startDate + "," +
+    return this.no + "," + this.title + "," + this.startDate + "," +
     this.endDate + "," + this.state + "," + this.description;
   }
-
+  
+  public int getNo() {
+    return no;
+  }
+  public void setNo(int no) {
+    this.no = no;
+  }
   public String getTitle() {
     return title;
   }

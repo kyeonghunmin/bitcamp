@@ -35,5 +35,7 @@ repositories {
 //                                       apache bcel 검색 --> gradle 복사하여 붙여넣기
 dependencies {
   // 사용법 => compile '라이브러리그룹명:이름:버전'
-  compile 'org.apache.bcel:bcel:5.2' 
+  compile 'org.apache.bcel:bcel:5.2'
+  compile 'mysql:mysql-connector-java:5.1.38'
+  
 }

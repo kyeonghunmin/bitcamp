@@ -23,8 +23,17 @@ public class RequestHandlerMapping {
     
     Method[] methods = null;
     RequestMapping anno = null;
+    RequestMapping classAnno = null;
+    String baseName = null;
     
     for (Object controller : controllers) {
+      classAnno = controller.getClass().getAnnotation(RequestMapping.class);
+      if (classAnno != null) {
+        baseName = classAnno.value();
+      } else {
+        baseName = "";
+      }
+      
       methods = controller.getClass().getMethods();
       
       for (Method m : methods) {
@@ -33,7 +42,7 @@ public class RequestHandlerMapping {
         if (anno == null)
           continue;
         
-        handlerMap.put(anno.value(), new RequestHandler(m, controller));
+        handlerMap.put(baseName + anno.value(), new RequestHandler(m, controller));
         //System.out.printf("%s--> %s\n", controller.getClass().getName(), m.getName());
       }
     }
