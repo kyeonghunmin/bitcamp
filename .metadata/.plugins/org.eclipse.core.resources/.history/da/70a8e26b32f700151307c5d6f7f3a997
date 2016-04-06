@@ -1,0 +1,10 @@
+// @Component가 붙은 클래스에 대해서만 인스턴스를 생성하고 관리한다.
+package bitcamp.pms.context;
+
+public class ApplicationContext3 {
+  HashMap<String, Object> objPool = new HashMap<>();
+  
+  public ApplicationContext3(String basePackage) {
+    
+  }
+}

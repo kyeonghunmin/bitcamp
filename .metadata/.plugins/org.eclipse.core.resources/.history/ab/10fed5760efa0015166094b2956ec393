@@ -1,0 +1,19 @@
+package bitcamp.pms.controller;
+
+import java.util.List;
+
+import bitcamp.pms.annotation.Controller;
+import bitcamp.pms.annotation.RequestMapping;
+import bitcamp.pms.dao.MemberDao;
+import bitcamp.pms.domain.Member;
+
+@Controller
+public class MemberListController {
+  private MemberDao memberDao;
+  
+  public void setMemberDao(MemberDao memberDao) {
+    this.memberDao = memberDao;
+  }
+  
+  
+}

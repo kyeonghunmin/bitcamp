@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html> <!--  -->
+<head>
+<meta charset="UTF-8">
+<title>타이머</title>
+</head>
+<body>
+140초<br/> <!-- <br> : 한줄 띄어쓰기, / : 끝 태그를 나타냄 -->
+<button>시작</button>
+</body>
+</html>

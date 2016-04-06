@@ -1,0 +1,26 @@
+// 주제 : 질의 객체(SQL문을 서버에 보낼 객체)를 준비하
+
+package step28;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class Test08 {
+
+  public static void main(String[] args) throws Exception {
+    Class.forName("com.mysql.jdbc.Driver");
+    
+    try (
+        Connection con = DriverManager.getConnection(
+        "jdbc:mysql://localhost:3306/java80db", 
+        "java80", 
+        "1111") ;
+        Statement stmt = con.createStatement();
+    ) {
+      System.out.println("연결 성공!");
+    } 
+  }
+}
+/* 
+
+*/

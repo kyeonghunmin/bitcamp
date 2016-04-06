@@ -1,0 +1,98 @@
+package bitcamp.pms.controller;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.Scanner;
+
+import bitcamp.pms.annotation.Component;
+import bitcamp.pms.domain.Member;
+
+@Component("member")
+public class MemberListController implements MenuController {
+  private Scanner keyScan;
+  private static ArrayList<Member> members;
+
+  public MemberListController() {
+    members = new ArrayList<>();
+  }
+
+  public void load() throws Exception {
+    FileReader in1 = new FileReader("member.data");
+    BufferedReader in = new BufferedReader(in1);
+
+    String line;
+    String[] values;
+    Member member;
+    while ((line = in.readLine()) != null) {
+      values = line.split(",");
+      member = new Member(values[0], values[1], values[2], values[3]);
+      members.add(member);
+    }
+
+    in.close();
+    in1.close();
+  }
+
+  public void save() throws Exception {
+    FileWriter out0 = new FileWriter("member.data");
+    BufferedWriter out1 = new BufferedWriter(out0);
+    PrintWriter out = new PrintWriter(out1);
+
+    for (Member member : members) {
+      out.println(member);
+    }
+
+    out.close();
+    out1.close();
+    out0.close();
+  }
+  
+  @Override
+  public void init() {
+    try {
+      this.load();
+    } catch (Exception e) {
+      throw new RuntimeException("회원 데이터 로딩 실패!!", e);
+    }
+  }
+
+  @Override
+  public void service(Map<String,Object> paramMap) {
+    keyScan = (Scanner) paramMap.get("stdin");
+
+    String input = null;
+    do {
+      input = keyScan.nextLine().toLowerCase();
+      try {
+        switch (input) {
+          case "list": doList(); break;
+          case "main": break;
+          default:
+            System.out.println("지원하지 않는 명령어입니다.");
+        }
+      } catch (IndexOutOfBoundsException e) {
+        System.out.println("유효하지 않은 인덱스입니다.");
+      }
+    } while (!input.equals("main"));
+  }
+
+  @Override
+  public void destroy() {
+    try {
+      this.save();
+    } catch (Exception e) {}
+  }
+
+  private void doList() {
+    Member member = null;
+    for (int i = 0; i < members.size(); i++) {
+      member = members.get(i);
+      System.out.printf("%d, %s\n", i, member.toString());
+    }
+  }
+}

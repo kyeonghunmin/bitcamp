@@ -1,0 +1,51 @@
+package bitcamp.pms;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
+
+import bitcamp.pms.annotation.Component;
+import bitcamp.pms.domain.Board;
+
+@Component
+public class Practise0 {
+  private static final String filename = "board.data";
+
+  public List<Board> selectList() throws Exception {
+    ArrayList<Board> boards = new ArrayList<>();
+
+    FileReader in1 = new FileReader(filename);
+    BufferedReader in = new BufferedReader(in1);
+    
+    String line;
+    String[] values;
+    Board board;
+    while ((line = in.readLine()) != null) {
+      values = line.split(",");
+      board = new Board();
+      board.setTitle(values[0]);
+      board.setTitle(values[0]);
+      board.setTitle(values[0]);
+      board.setTitle(values[0]);
+      board.setTitle(values[0]);
+      board.add(board);
+      
+    }
+    in.close();
+    in1.close();
+    return boards;
+  }
+  
+  public void insert(Board board) throws Exception {
+    FileWriter out0 = new FileWriter(filename);
+    BufferedWriter out1 = new BufferedWriter(out0);
+    PrintWriter out = new PrintWriter(out1);
+    
+    
+  }
+  
+}

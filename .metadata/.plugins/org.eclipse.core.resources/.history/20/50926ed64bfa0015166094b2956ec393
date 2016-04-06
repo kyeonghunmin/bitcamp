@@ -1,0 +1,16 @@
+package bitcamp.pms;
+
+import bitcamp.pms.annotation.Controller;
+import bitcamp.pms.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("board/")
+public class Practise0 {
+  private BoardDao boardDao;
+
+  public void setBoardDao(BoardDao boardDao) {
+    this.boardDao = boardDao;
+  }
+  
+  
+}

@@ -1,0 +1,10 @@
+package step28;
+
+import com.mysql.jdbc.Driver;
+
+public class Test01 {
+  public static void main(String[] args) {
+    DriverManager.registerDriver(new Driver());
+    
+  }
+}

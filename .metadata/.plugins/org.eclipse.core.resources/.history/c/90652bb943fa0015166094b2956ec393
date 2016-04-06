@@ -1,0 +1,19 @@
+package bitcamp.pms;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import bitcamp.pms.annotation.Controller;
+import bitcamp.pms.context.ApplicationContext;
+import bitcamp.pms.context.request.RequestHandler;
+
+public class Practise0 {
+  ApplicationContext appContext;
+  HashMap<String, RequestHandler> handler = new HashMap<>();
+
+  public Practise0(ApplicationContext appContext) {
+    this.appContext = appContext;
+
+    Map<String, Object> controllerMap = appContext. getBeansWithAnnotation(Controller.class);
+  }
+}

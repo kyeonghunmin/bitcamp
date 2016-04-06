@@ -1,0 +1,18 @@
+package bitcamp.pms;
+
+
+public class Practise0 {
+
+  public static void main(String[] args) throws ClassNotFoundException {
+    Class<?> c = Class.forName("bitcamp.pms.ProjectApp");
+    System.out.println(c);
+    
+    String.class.getName();
+   
+    byte.class.getName();
+    
+    
+  }
+
+ 
+}

@@ -1,0 +1,42 @@
+// 용도 : ApplicationContext가 관리하는 객체 중에서 명령을 처리하는 메서드 정보를
+// 따로 보관하여 관리한다.
+// ProjectApp은 명령어를 처리할 때 이 클래스를 통해 메서드 정보를 얻어서 
+// 해당 메서드를 호출한다.
+
+package bitcamp.pms.context.request;
+
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+
+import bitcamp.pms.annotation.Controller;
+import bitcamp.pms.context.ApplicationContext;
+
+public class RequestHandlerMapping {
+  ApplicationContext appContext;
+  HashMap<String, RequestHandler> handlerMap = new HashMap<>();
+  
+  public RequestHandlerMapping(ApplicationContext appContext) {
+    this.appContext = appContext;
+  }
+  
+  // 1) ApplicatationContext를 통해서 @Controller가 붙은 객체를 꺼낸다.
+  Map<String, Object> controllersMap = 
+      appContext.getBeansWithAnnotation(Controller.class);
+  
+  Collection<Object> controllers = controllersMap.values();
+  
+  for (Object controller : controllers) {
+    // 2) 각 객체에서 @RequestMapping이 붙은 메서드를 꺼낸다.
+    
+    // 3) RequestHandler 객체에 메서드와 객체 정보를 저장한다.
+    
+    // 4) RequestMap에 RequestHandler 객체를 보관한다.
+    
+  }
+  
+  
+  
+  
+  
+}

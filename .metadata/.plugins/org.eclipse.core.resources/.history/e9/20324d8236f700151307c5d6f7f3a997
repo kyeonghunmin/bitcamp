@@ -1,0 +1,11 @@
+package bitcamp.pms;
+
+
+public class Practise0 {
+
+  public static void main(String[] args) {
+    System.out.println(getName());
+    
+    
+  }
+}

@@ -1,0 +1,21 @@
+package bitcamp.pms;
+
+import java.lang.reflect.Method;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+
+import bitcamp.pms.annotation.Controller;
+import bitcamp.pms.annotation.RequestMapping;
+import bitcamp.pms.context.ApplicationContext;
+
+public class RequestHandlerMapping {
+  ApplicationContext appContext;
+  HashMap<String, RequestHandler> handler = new HashMap<>();
+
+  public RequestHandlerMapping(ApplicationContext appContext) {
+    this.appContext = appContext;
+
+    Map<String, Object> controllerMap = appContext. getBeansWithAnnotation(Controller.class)
+  }
+}

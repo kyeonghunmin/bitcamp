@@ -1,0 +1,37 @@
+package bitcamp.pms.controller;
+
+import java.util.List;
+import java.util.Map;
+
+import bitcamp.pms.annotation.Controller;
+import bitcamp.pms.dao.ProjectDao;
+import bitcamp.pms.domain.Project;
+
+@Controller("project/list.do")
+public class ProjectListController implements MenuController {
+  private ProjectDao projectDao;
+
+  public void setProjectDao(ProjectDao projectDao) {
+    this.projectDao = projectDao;
+  }
+
+  @Override
+  public void init() {}
+
+  @Override
+  public void service(Map<String, Object> paramMap) {
+    try {
+      List<Project> projects = projectDao.selectList();
+      
+      for (int i = 0; i < projects.size(); i++) {
+        System.out.printf("%d, %s\n", i, projects.get(i).toString());
+      }
+      
+    } catch (Exception e) {
+      throw new RuntimeException("프로젝트 데이터 로딩 실패!!", e);
+    }
+  }
+
+  @Override
+  public void destroy() {}
+}
