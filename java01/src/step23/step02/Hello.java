@@ -1,4 +1,4 @@
-package step23;
+package step23.step02;
 
 public class Hello {
   public String greet() {

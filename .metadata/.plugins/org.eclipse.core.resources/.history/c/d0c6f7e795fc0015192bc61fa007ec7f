@@ -1,0 +1,5 @@
+package designpattern.builder.exam01;
+
+public class CarInfo {
+
+}

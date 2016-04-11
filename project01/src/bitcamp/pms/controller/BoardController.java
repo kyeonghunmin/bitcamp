@@ -3,9 +3,9 @@ package bitcamp.pms.controller;
 import java.util.List;
 import java.util.Scanner;
 
-import bitcamp.pms.Dao.BoardDao;
 import bitcamp.pms.annotation.Controller;
 import bitcamp.pms.annotation.RequestMapping;
+import bitcamp.pms.dao.BoardDao;
 import bitcamp.pms.domain.Board;
 import bitcamp.pms.util.CommandUtil;
 

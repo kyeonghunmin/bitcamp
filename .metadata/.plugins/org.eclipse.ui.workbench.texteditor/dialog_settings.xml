@@ -1,34 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
-		<item value="409" key="DIALOG_X_ORIGIN"/>
-		<item value="203" key="DIALOG_Y_ORIGIN"/>
-	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item value="false" key="isRegEx"/>
-		<item value="selectOne" key="selection"/>
-		<item value="false" key="casesensitive"/>
+		<item key="isRegEx" value="false"/>
+		<item value="" key="selection"/>
+		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="selectOne"/>
-			<item value="insert"/>
-			<item value="selectList"/>
-			<item value="appContext"/>
-			<item value="프로젝트 데이터 로딩"/>
-			<item value="ArrayList"/>
-			<item value="toString"/>
-			<item value="invoke"/>
+			<item value="Member"/>
+			<item value="member"/>
+			<item value="project"/>
+			<item value="Project"/>
+			<item value="PROJECT"/>
+			<item value="폰갭"/>
+			<item value="tomcat"/>
+			<item value="bashrc"/>
 		</list>
 		<list key="replacehistory">
+			<item value="task"/>
+			<item value="Task"/>
+			<item value="project"/>
+			<item value="Project"/>
+			<item value="TASK"/>
+			<item value="member"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item value="317" key="DIALOG_WIDTH"/>
+		<item key="DIALOG_WIDTH" value="329"/>
 		<item value="1|Noto Sans|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
-		<item value="448" key="DIALOG_HEIGHT"/>
-		<item value="969" key="DIALOG_X_ORIGIN"/>
-		<item value="198" key="DIALOG_Y_ORIGIN"/>
+		<item value="468" key="DIALOG_HEIGHT"/>
+		<item value="799" key="DIALOG_X_ORIGIN"/>
+		<item value="211" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

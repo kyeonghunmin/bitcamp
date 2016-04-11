@@ -9,7 +9,7 @@
 //    기존의 클래스를 상속 받은 후 많은 코드가 추가된 경우에는
 //    HelloJp처럼 기존 상속을 포기할 수 없다.
 
-package step23;
+package step23.step04;
 
 public class Test {
   public static void main(String[] args) {

@@ -1,6 +1,0 @@
-package bitcamp.pms.annotation;
-
-@Retention(RetentionPolicy.RUNTIME)
-public @interface RequestMapping {
-  String value() default "";
-}

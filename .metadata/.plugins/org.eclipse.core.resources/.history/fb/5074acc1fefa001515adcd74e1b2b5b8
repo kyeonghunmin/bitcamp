@@ -1,4 +1,0 @@
-create table project (
-  pno int primary key auto_increment,
-  title varchar
-);

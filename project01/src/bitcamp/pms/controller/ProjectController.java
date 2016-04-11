@@ -4,9 +4,9 @@ import java.sql.Date;
 import java.util.List;
 import java.util.Scanner;
 
-import bitcamp.pms.Dao.ProjectDao;
 import bitcamp.pms.annotation.Controller;
 import bitcamp.pms.annotation.RequestMapping;
+import bitcamp.pms.dao.ProjectDao;
 import bitcamp.pms.domain.Project;
 import bitcamp.pms.util.CommandUtil;
 

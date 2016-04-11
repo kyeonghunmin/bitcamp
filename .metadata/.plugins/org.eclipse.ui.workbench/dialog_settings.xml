@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="WorkbenchPreferenceDialogSettings">
-		<item value="0" key="DIALOG_Y_ORIGIN"/>
-		<item value="699" key="DIALOG_X_ORIGIN"/>
-	</section>
-	<section name="org.eclipse.ui.preferences.keysPreferencePage">
-		<item value="true" key="actionSetFilter"/>
-		<item value="true" key="uncategorizedFilter"/>
-		<item value="true" key="internalFilter"/>
+		<item key="DIALOG_X_ORIGIN" value="279"/>
+		<item value="89" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
-		<item value="-1" key="dialogHeight"/>
-		<item value="-1" key="dialogWidth"/>
+		<item key="dialogHeight" value="675"/>
+		<item value="1200" key="dialogWidth"/>
 		<list key="textEntries">
 		</list>
 		<list key="orderedElements">
@@ -22,22 +17,25 @@
 		</list>
 	</section>
 	<section name="PreferencesImportWizard">
-		<item value="/home/bitcamp/바탕화면/qwerty.epf" key=""/>
+		<item key="" value="/home/bitcamp/다운로드/theme-1.xml"/>
 		<list key="WizardPreferencesExportPage1.STORE_DESTINATION_NAMES_ID">
-			<item value="/home/bitcamp/바탕화면/qwerty.epf"/>
+			<item value="/home/bitcamp/다운로드/theme-1.xml"/>
+			<item value="/home/bitcamp/다운로드/theme-1.epf"/>
 		</list>
 	</section>
 	<section name="NewWizardAction">
-		<item value="org.eclipse.wst.html.ui.internal.wizard.NewHTMLWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.wst.html.ui.internal.wizard.NewHTMLWizard"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
 			<item value="org.eclipse.wst.web.ui"/>
 		</list>
 	</section>
 	<section name="ImportExportAction">
-		<item value="org.eclipse.ui.wizards.import.Preferences" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>
+		<item key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID" value="org.eclipse.ui.wizards.import.ExternalProject"/>
 		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
 			<item value="org.eclipse.ui.Basic"/>
 			<item value="org.eclipse.egit.ui.internal.clone.gitclonecategory"/>
 		</list>
+	</section>
+	<section name="FileSystemImportWizard">
 	</section>
 </section>

@@ -1,0 +1,27 @@
+package step31;
+
+import java.util.Scanner;
+
+public class Test05 {
+
+  public static void main(String[] args) {
+    Scanner keyScan = new Scanner(System.in);
+
+
+    // String regex = "^a\\d"; // 시작 문자가 a, 0 ~ 9까지 숫자
+    String regex = "^\\p{Alpha}\\w";  // 알파벳으로 시작, 알파벳 || 숫자
+    
+    String input = null;
+    
+    while (true) {
+      System.out.print("입력: ");
+      input = keyScan.nextLine();
+      if (input.equals("quit"))
+        break;
+      System.out.println(input.matches(regex));
+    }
+    
+    keyScan.close();
+  }
+
+}

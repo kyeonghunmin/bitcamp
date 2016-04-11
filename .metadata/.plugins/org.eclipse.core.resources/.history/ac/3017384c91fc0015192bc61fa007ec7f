@@ -1,0 +1,7 @@
+package designpattern.abstractfactory.exam01;
+
+public class Home {
+  String image;
+  int defense;
+  int attack;
+}

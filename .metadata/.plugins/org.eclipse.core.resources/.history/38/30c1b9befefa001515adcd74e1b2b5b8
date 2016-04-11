@@ -1,4 +1,0 @@
-create table project (
-  pno int primary auto_increment,
-  
-);

@@ -3,7 +3,7 @@
 //    HelloJp 클래스
 // => HelloJp 클래스를 사용하여 일본어 인사말을 출력한다.
 
-package step23;
+package step23.step02;
 
 public class Test {
   public static void main(String[] args) {

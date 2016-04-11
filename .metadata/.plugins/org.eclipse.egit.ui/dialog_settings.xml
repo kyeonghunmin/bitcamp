@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item value="2" key="org.eclipse.egit.ui.internal.clone.GitSelectWizardPageWizardSel"/>
+	<item key="org.eclipse.egit.ui.internal.clone.GitSelectWizardPageWizardSel" value="1"/>
+	<item value="/home/bitcamp/git/Java80/.git" key="GitSelectRepositoryPage.lastRepository"/>
 	<list key="RepositorySelectionPage.UsedUris">
-		<item value="https://github.com/eomjinyoung/Java80"/>
+		<item value="https://github.com/eomjinyoung/Java80.git"/>
 	</list>
 	<section name="GitImportWizard">
-	</section>
-	<section name="org.eclipse.egit.ui.internal.pull.PullResultDialog.dialogBounds">
-		<item value="472" key="DIALOG_WIDTH"/>
-		<item value="1|Noto Sans|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
-		<item value="460" key="DIALOG_HEIGHT"/>
-		<item value="777" key="DIALOG_X_ORIGIN"/>
-		<item value="379" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

@@ -1,4 +1,4 @@
-package step23;
+package step23.step03;
 
 // 서브 클래스에게 공통 필드나 메서드를 상속해주는 용도의 클래스이기 때문에
 // 추상 클래스로 선언한다. (abstract)

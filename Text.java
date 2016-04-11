@@ -814,7 +814,94 @@ com.mysql.jdbc.Driver --> com.mysql.jdbc.ConnectionImpl --> com.mysql.jdbc.State
 
 
 
+// 4.7 (목)
+* DB 연결
+- 서버와 통신 시작
+- User 존재 및 유효성 검증 (Autentication, 인증)
+- User 권한 부여 (Authorization, 권한)
 
+
+* Multi-User 환경에서 DB 커넥션
+- 서버 <-> 클라이언트 관계
+
+ProjectApp --> XxxController --> XxxDao --> Connection --> DBMS
+         list()         selectList()  statement
+         add()          insert()      preparedstatement
+         delete()       delete()
+
+- XxxDao 까지는 여러 사용자가 동시에 처리가 가능하다.
+- Connection은 하나이기 때문에 동시에 처리하지 못하고 순차적으로 처리해야 한다.
+
+* 커넥션 공유시 문제점
+- SQL 실행을 순차적으로 한다. (Multi-Tasking 방해)
+- SQL 실행중에 문제가 발생하여 커넥션을 닫거나 롤백하면
+  그 커넥션에 소속된 모든 Statement에 영향을 끼친다.
+  => XxxDao 까지 처리된 여러 명령들도 영향을 받게 된다.
+  => 결론 : Multi-Tasking 환경에서는 Connection을 동시에 공유해서 사용하지 않는다.
+     해결 : 하나의 작업 당 하나의 Connection을 사용한다.
+==> Connection Pool에서 Connection을 관리하여 배분해준다.
+    - 이 때, 하나의 작업 당 하나의 Connection을 사용한다.
+    - Connection을 넘겨주고, Pool에서 다시 리턴받는다. => 재사용이 가능해진다.
+
+
+* Mybatis (SQL Mapper) -> Persistence FrameWork
+- BoardDao에서 JDBC코드와 SQL코드를 분리하고, BoardDao는 그것들을 사용하는 용도로 쓴다.
+- JDBC코드 => sqlSession
+- SQL코드  => SQL
+BoardDao --(사용)--> sqlSession --(사용)--> SQL
+
+1) Java 코드에서 SQL 분리 -> SQL 관리가 쉽다
+2) JDBC 코드를 캡슐화 -> 단순하고 반복적인 코드를 감춘다. (자동화 시킴)
+
+- Persistence FrameWork
+  => Data (지속성) 처리
+  1) SQL Mapper
+    Java Code <=> FrameWork <=> SQL --(실행)--> DBMS
+    (자바 코드와 SQL을 연결해주는 역할), (JDBC와 SQL문을 처리)
+    JDBC와 SQL은 개발자가 작성
+    DBMS에 종속적이다. (DBMS 마다 질의어가 조금씩 다름)
+    DBMS예 최적화된 SQL문을 만들 수 있기 때문에 우수한 성능을 구현할 수 있다.
+    ex) mybatis
+
+  2) OR Mapper(객체-관계 맵퍼)
+    Java Code --(객체 질의어)--> FrameWork --(생성)--> SQL --(실행)--> DBMS
+    SQL문을 개발자가 작성하지 않고, FrameWork전용 질의 문법을 사용하여 실행한다.
+    장점 : DBMS에 독립적이다.
+    ex) Hibernate, TopLink
+
+
+
+* Abstract Factory 패턴
+- 공통 기능을 묶어 Factory 추상 클래스를 만들어 사용하는 것.
+
+
+
+// 4.8 (금)
+* HTML5 : 비디오 플레이 등의 작업을 tag를 통해 수행하도록 html명세에 포함했다.
+          sementic 웹
+
+* step30/exam02
+1) insert MEMBERS(...)
+   values(...)
+   를 DBMS로 보낸다.
+2) DBMS에서 Temp(임시 테이블)에 임시보관을 한다.
+3) commit을 통해 Temp에서 MEMBERS 테이블로 적용한다.
+   (Temp 테이블에서 Transaction 작업이 수행된다.)
+
+** JDBC 프로그래밍시 auto commit으로 설정되어 있으면
+   insert, update, delete 후 자동 commit이 된다.
+   => auto commit을 해제하면 transaction 작업을 수행할 수 있게 된다.
+   
+* Transaction
+ex) 계좌이체 업무
+    1) 자신의 잔액 변경
+    2) 타인의 잔액 변경
+    3) + 금액 입력
+    4) - 금액 입력
+    ==> 4가지의 업무를 묶어 하나의 작업으로 다루는 것
+        (이체 업무는 4단계가 모두 성공했을 때만 유효하다)
+        -> commit : 모두 성공했을 경우
+        -> rollback : 한 개라도 실패했을 경우
 
 
 

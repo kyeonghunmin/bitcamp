@@ -15,7 +15,7 @@
 // 문제점
 // => HelloJp는 이미 ArrayList를 상속받고 있기 때문에 이 구조로 개편할 수 없다.
 // => step04에서 개선
-package step23;
+package step23.step03;
 
 public class Test {
   public static void main(String[] args) {

@@ -3,9 +3,9 @@ package bitcamp.pms.controller;
 import java.util.List;
 import java.util.Scanner;
 
-import bitcamp.pms.Dao.MemberDao;
 import bitcamp.pms.annotation.Controller;
 import bitcamp.pms.annotation.RequestMapping;
+import bitcamp.pms.dao.MemberDao;
 import bitcamp.pms.domain.Member;
 import bitcamp.pms.util.CommandUtil;
 
@@ -75,7 +75,7 @@ public class MemberController {
   }
   
   @RequestMapping("list.do")
-  public void list() {    
+  public void list() {
     try {
       List<Member> list = memberDao.selectList();
      

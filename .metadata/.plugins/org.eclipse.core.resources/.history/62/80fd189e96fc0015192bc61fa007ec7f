@@ -1,0 +1,15 @@
+// 주제 : Builder 패턴 적용 전
+
+package designpattern.builder.exam01;
+
+public class Test01 {
+
+  public static void main(String[] args) {
+    CarFactory factory = new CarFactory();
+    
+    Car c1 = factory.createCar("tico");
+
+    Car c2 = factory.createCar("sonata");
+  }
+
+}

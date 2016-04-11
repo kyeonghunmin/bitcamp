@@ -1,4 +1,4 @@
-package step23;
+package step23.step02;
 
 import java.util.ArrayList;
 import java.util.Calendar;

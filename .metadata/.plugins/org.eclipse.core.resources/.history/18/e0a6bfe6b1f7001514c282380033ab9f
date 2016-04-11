@@ -1,6 +1,0 @@
-package bitcamp.pms.context.request;
-
-public class RequestHandler {
-  Method method;
-  Object instance;
-}
