@@ -1,0 +1,14 @@
+package step31;
+
+import java.util.Scanner;
+
+public class Test03 {
+
+  public static void main(String[] args) {
+    Scanner keyScan = new Scanner(System.in);
+    
+    String regex = "[abc]";
+
+  }
+
+}

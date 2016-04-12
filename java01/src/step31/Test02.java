@@ -16,7 +16,7 @@ public class Test02 {
     // 만약 \\를 자바 문자열로 표현하고 싶다면 "\\\\"로 해야 한다.
     
     // 해결책
-    String regex = "a\\\\b\\\\c";
+    String regex = "a\\b\\c";
     String input = null;
     
     while (true) {

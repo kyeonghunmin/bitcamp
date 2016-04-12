@@ -1,0 +1,5 @@
+package bitcamp.pms.util;
+
+public class Session {
+
+}

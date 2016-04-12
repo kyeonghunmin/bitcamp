@@ -905,6 +905,14 @@ ex) 계좌이체 업무
 
 
 
+// 4.12(화)
+* regex 설치
+// http://www.getproxy.jp/kr/korea
+// 아이피, 포트번호 복사
+// window --> preference --> general --> network connections --> manual
+// --> http 에 아이피, 포트번호 붙여넣기
+// help --> eclipse marketplace에서 regex 설
+
 
 
 
