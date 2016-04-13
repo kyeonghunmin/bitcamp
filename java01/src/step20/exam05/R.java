@@ -1,6 +1,9 @@
 package step20.exam05;
 
 public final class R {
+  // 상수 값을 선언한 중첩 클래스의 이름을 소문자로 지으면
+  // 상수 값을 사용할 때 꼭 일반 인스턴스의 프로퍼티(변수,필드) 같이 보여서
+  // 코드를 읽기 쉬워진다. 
   public static final class gender {
     public static final int MAN = 0;
     public static final int WOMAN = 1;

@@ -1,154 +1,177 @@
 package bitcamp.pms.controller;
 
-import java.io.InputStream;
-import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.ibatis.io.Resources;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
-
 import bitcamp.pms.annotation.Controller;
+import bitcamp.pms.annotation.RequestMapping;
 import bitcamp.pms.dao.MemberDao;
 import bitcamp.pms.domain.Member;
+import bitcamp.pms.util.CommandUtil;
+import bitcamp.pms.util.Session;
 
 @Controller
 public class AuthController {
   Scanner keyScan;
-  static int aa;
-    
+  MemberDao memberDao;
+  Session session;
+  
   public void setScanner(Scanner keyScan) {
     this.keyScan = keyScan;
   }
   
-  public void service() throws Exception {
-    boolean b = true;
-    String input = null;
-    do {
-      System.out.println("1) 로그인");
-      System.out.println("2) 회원가입");
-      System.out.print("선택? ");
-      input = keyScan.nextLine();
-      if (input.equals("1")) {
-        b = doLogin();
-      } else if (input.equals("2")) {
-        b = doJoin();
-      } else {
-        break;
-      }
-    } while (!b);
+  public void setMemberDao(MemberDao memberDao) {
+    this.memberDao = memberDao;
   }
   
-  private boolean doLogin() throws Exception {
-    System.out.print("이메일: ");
-    String email = keyScan.nextLine();
-    System.out.print("암호: ");
-    String pass = keyScan.nextLine();
-    
-    InputStream inputStream = Resources.getResourceAsStream(
-                        "conf/mybatis-config.xml");
-    SqlSessionFactory sqlSessionFactory = 
-        new SqlSessionFactoryBuilder().build(inputStream);
+  public void setSession(Session session) {
+    this.session = session;
+  }
 
-    MemberDao memberDao = new MemberDao();
-    memberDao.setSqlSessionFactory(sqlSessionFactory);
-    
-    List<Member> list = memberDao.selectList();
-    
-    for (Member m : list) {
-      if (!m.getEmail().equals(email)) {
-        System.out.println("등록되지 않은 사용자입니다.");
-        return false;
-      } else if (!m.getPassword().equals(pass)) {
-        System.out.println("암호가 맞지 않습니다.");
-        return false;
-      } else {
-        aa = m.getNo();
-        System.out.printf("환영합니다. %s님\n", m.getName());
-        return true;
+  @RequestMapping("unsubscribe")
+  public void unsubscribe(Session se) {
+    if (CommandUtil.confirm(keyScan, "정말 탈퇴하시겠습니까?")) {
+      try {
+        Member loginUser = (Member)se.getAttribute("loginUser");
+        memberDao.delete(loginUser.getNo());
+        System.out.println("회원 정보를 삭제하였습니다. 안녕히 가세요.");
+      } catch (Exception e) {
+        System.out.println("데이터를 저장하는데 실패했습니다.");
       }
     }
-    return false;
   }
   
-  private boolean doJoin() throws Exception {
-    InputStream inputStream = Resources.getResourceAsStream(
-        "conf/mybatis-config.xml");
-    SqlSessionFactory sqlSessionFactory = 
-        new SqlSessionFactoryBuilder().build(inputStream);
-
-    MemberDao memberDao = new MemberDao();
-    memberDao.setSqlSessionFactory(sqlSessionFactory);
-    
+  public void service() {
+    String input = null;
+    while (true) {
+      System.out.println("1) 로그인");
+      System.out.println("2) 회원가입");
+      System.out.println("9) 종료");
+      System.out.print("선택? ");
+      input = keyScan.nextLine();
+      
+      switch (input) {
+      case "1":
+        if (doLogin()) {
+          return;
+        }
+        break;
+      case "2":
+        doSignUp();
+        break;
+      case "9":
+        System.out.println("안녕히가세요");
+        System.exit(0);
+        break;
+      default:
+        System.out.println("올바르지 않은 번호입니다.");
+      }
+    }
+  }
+  
+  private void doSignUp() {
     Member member = new Member();
     
     System.out.print("이름: ");
     member.setName(keyScan.nextLine());
+    
+    String value = null;
     while (true) {
       System.out.print("이메일: ");
-      String input = keyScan.nextLine();
-      if (input.matches("^[_a-zA-Z0-9-\\.]+@[\\.a-zA-Z0-9-]+\\.[a-zA-Z]+$")) {
-        member.setEmail(input);
+      value = keyScan.nextLine();
+      if (value.matches("[a-zA-Z][\\w\\.]*@([\\w]+\\.)?[\\w]+\\.[a-zA-Z]{2,}"))
         break;
-      } else {
-        System.out.println("이메일 형식이 맞지 않습니다.");
-      }
+      System.out.println("이메일 형식에 맞지 않습니다. 예) aaa.aaa@bbb.com");
     }
-    String regex;
-    Pattern pattern;
+    member.setEmail(value);
     
-    Matcher matcher;
+    String regex = null;
+    Pattern pattern = null;
+    Matcher matcher = null;
     
     while (true) {
       System.out.print("암호: ");
-      String input = keyScan.nextLine();
+      value = keyScan.nextLine();
+      
+      if (value.length() < 4 || value.length() > 10) {
+        System.out.println("암호는 4 ~ 10자 까지만 가능합니다.");
+        continue;
+      }
       
       regex = String.format(
-          "(?=.*\\d)(?=.*\\p{Alpha})(?=.*[!@?])[a-zA-Z0-9!@?]{%d}", input.length()); 
-      
+          "(?=.*\\d)(?=.*[a-zA-Z])(?=.*[!@?])[0-9a-zA-Z!@?]{%d}", 
+          value.length());
+
       pattern = Pattern.compile(regex);
-          
-      matcher = pattern.matcher(input);
+      matcher = pattern.matcher(value); 
       
-      if (matcher.find()) break;
+      if (matcher.find()) {
+        break;
+      }
       
-      System.out.println("암호 형식이 맞지 않습니다.");
+      System.out.println(
+          "최소 알파벳1개, 숫자1개, 특수문자(?,!,@)1개를 반드시 포함해야 합니다.");
     }
+    member.setPassword(value);
     
     while (true) {
       System.out.print("전화: ");
-      String input = keyScan.nextLine();
-      if (Pattern.matches("[0-9]{3,4}[-][0-9]{4}", input)) {
-        member.setPassword(keyScan.nextLine());
+      value = keyScan.nextLine();
+      if (value.matches("(\\d{2,4}-)?\\d{3,4}-\\d{4}"))
         break;
-      } else {
-        System.out.println("전화 형식이 맞지 않습니다.");
-      }
+      System.out.println("전화 형식에 맞지 않습니다. 예) 02-123-1234");
     }
+    member.setTel(value);
     
-    memberDao.insert(member);
-    System.out.println("회원 가입되었습니다.");
-    return false;
+    try {
+      memberDao.insert(member);
+      System.out.println("회원 가입되었습니다.");
+    } catch (Exception e) {
+      System.out.println("회원 가입에 실패했습니다.");
+    }
   }
-  
-  public void doUnsub() throws Exception {
-    InputStream inputStream = Resources.getResourceAsStream(
-        "conf/mybatis-config.xml");
-    SqlSessionFactory sqlSessionFactory = 
-          new SqlSessionFactoryBuilder().build(inputStream);
 
-    MemberDao memberDao = new MemberDao();
-    memberDao.setSqlSessionFactory(sqlSessionFactory);
+  private boolean doLogin() {
+    System.out.print("이메일: ");
+    String email = keyScan.nextLine();
     
-    System.out.print("정말로 탈퇴하시겠습니까?(y/n) ");
-    String sub = keyScan.nextLine().toLowerCase();
-    if (sub.equals("y")) {
-      memberDao.delete(aa);
-      
-      System.out.println("회원 정보를 삭제하였습니다.");
-      //doQuit();
+    System.out.print("암호: ");
+    String password = keyScan.nextLine();
+    
+    Member member = memberDao.selectOneByEmail(email);
+    
+    if (member == null) {
+      System.out.println("등록되지 않은 사용자입니다.");
+      return false;
+    } else if (!member.getPassword().equals(password)) {
+      System.out.println("암호가 맞지 않습니다.");
+      return false;
     }
+    
+    // 로그인 성공한 회원 정보를 세션에 보관한다.
+    // why? 다른 컨틀롤러가 사용할 수 있도록!
+    session.setAttribute("loginUser", member);
+    
+    System.out.printf("환영합니다. %s님!\n", member.getName());
+    
+    return true;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -2,7 +2,7 @@
 
 package step27.exam04;
 
-// 1) 속성 이름이 value일 경우는 이름을 생략할 수 있다.
+// 1) 속성 이름이 "value"일 경우는 이름을 생략할 수 있다.
 @Component("okok")
 public class Member {
 

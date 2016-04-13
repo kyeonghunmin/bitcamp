@@ -8,8 +8,10 @@ package designpattern.builder.exam02;
 public class Test01 {
 
   public static void main(String[] args) {
+    //1) 자동자 공장을 만들어주는 건설사 객체를 준비한다.
     //CarFactoryBuilder builder = new CarFactoryBuilder();
    
+    //2) 설계도를 바탕으로 자동차 공장을 준비
     CarFactory factory = new CarFactoryBuilder().build(
         "tico,티코2,900;sonata,소나타2,1999;equs,에쿠스골드,3500");
     

@@ -10,6 +10,7 @@ public class Test05 {
   public static void main(String[] args) throws IOException {
     File f = new File(".");
 
+    // 현재 폴더의 파일 이름을 모두 출력한다.
     File[] files = f.listFiles(new FileFilter() {
       @Override
       public boolean accept(File file) {

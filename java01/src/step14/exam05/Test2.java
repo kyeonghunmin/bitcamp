@@ -6,13 +6,13 @@ public class Test2 {
   public static void main(String[] args) {
     Sedan2 c = new Sedan2();
 
-
+    // 수퍼 클래스의 설계도를 보고 만든 메모리
     c.model = "티코";
     c.maker = "비트자동차";
     c.cc = 2000;
     c.capacity = 5;
 
-
+    // 자신의 설계도를 보고 만든 메모리
     c.isAutomatic = true;
     c.isSunroof = false;
 

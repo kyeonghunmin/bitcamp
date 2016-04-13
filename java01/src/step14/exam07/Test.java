@@ -32,4 +32,9 @@ new B(); 에서 인스턴스 생성 절차
                    6) A의 생성자를 실행
    7) B의 생성자 실행
 8) B의 인스턴스 값 출력
+System.out.println(p.v1);
+System.out.println(p.v2);
+System.out.println(p.v3);
+System.out.println(p.v4);
+System.out.println(p.v5);
 */

@@ -8,7 +8,9 @@ package step23.step01;
 
 public class Test {
   public static void main(String[] args) {
-
+    // JVM 옵션: -Dlang=값
+    // 값 => en, ko
+    // null => ko
     String lang = System.getProperty("lang");
 
     String message = null;

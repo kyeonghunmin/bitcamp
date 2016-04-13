@@ -11,6 +11,12 @@ public class Test7 {
     p2.value = new String("okok");
 
     String s1 = (String)p1.value;
+    // Bucket의 value는 Object 타입이기 때문에
+    // 원래 타입 변수에 저장하려면
+    // 타입 캐스팅을 해야 한다.
+    
     String s2 = p2.value;
+    // Bucket6는 타입 캐스팅을 안해도 된다.
+    // p2 변수를 선언할 때 타입 정보를 넘겼기 때문이다.
   }
 }

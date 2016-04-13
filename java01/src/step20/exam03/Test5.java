@@ -8,5 +8,7 @@ public class Test5 {
     Outer4 p = new Outer4();
     p.no = 20;
     p.m();
+    // 바깥 클래스의 메서드를 호출하면,
+    // 그 내부에서 자신의 inner class를 사용할 것이다.
   }
 }

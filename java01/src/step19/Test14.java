@@ -18,11 +18,11 @@ public class Test14 {
   public static void main(String[] args) {
     try {
       m3(10);
-    // } catch (OldManException e) {
-    // } catch (AgeException e) {
-    // } catch (Exception e) {
-    } catch (Throwable e) {
-    // } catch (Object e) {       // 오류 (Object는 안됨)
+    // } catch (OldManException e) {  // 정확하게 클래스 지정
+    // } catch (AgeException e) {  // 상위 클래스를 지정할 수 있다.
+    // } catch (Exception e) {  // 더 상위 클래스 지정 가능.
+    } catch (Throwable e) {  // 더 상위 클래스 지정 가능.
+    // } catch (Object e) {       // 오류 (Object는 안됨; Throwable만 가능)
       e.printStackTrace();
     }
   }

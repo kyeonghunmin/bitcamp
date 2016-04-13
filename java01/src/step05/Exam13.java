@@ -12,7 +12,7 @@ public class Exam13 {
 
     // 배열을 좀 더 쉽게 다루기 위해 등장한 for 문법
     for (int i : scores) {
-      System.out.println()
+      System.out.println(i);
     }
   }
 }

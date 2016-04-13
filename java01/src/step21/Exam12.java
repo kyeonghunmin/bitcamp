@@ -61,7 +61,7 @@ public class Exam12 {
       map.put(k2, m2);
       map.put(k3, m3);
       map.put(k4, m1); // key가 다르면 같은 인스턴스를 중복 저장할 수 있다.
-      map.put(k5, m2);
+      map.put(k5, m2); // key가 다르면 같은 인스턴스를 중복 저장할 수 있다.
 
       String kk1 = new String("aaa");
       String kk2 = new String("bbb");

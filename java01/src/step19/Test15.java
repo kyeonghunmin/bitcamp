@@ -28,8 +28,14 @@ public class Test15 {
       e.printStackTrace();
     } catch (ChildException e) {
       e.printStackTrace();
-    } catch (AgeException e) {
+    } catch (AgeException e) {  // 상위 클래스가 아래에 위치해야 한다.
       e.printStackTrace();
     }
   }
 }
+/*
+# catch 작성 순서
+- try 블록에서 여러 개의 예외가 발생하고,
+  각각의 예외를 개별로 처리해야할 경우,
+  => 예외 간의 상속관계를 따져서 최하위 예외부터 잡도록(catch)한다.
+*/

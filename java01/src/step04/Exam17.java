@@ -40,4 +40,6 @@ public class Exam17 {
 => byte, short ---> int
 => int, long ---> float, double
 => float ---> double
+=> 주의!
+   byte와 short는 연산할 때 무조건 int로 형변환 된다.
 */

@@ -1,6 +1,6 @@
 // 주제 : Collection API - HashMap 2 - 사용자 정의 클래스를 key로 사용하기
 //                                   - MyKey의 hashCode()와 equals() 재정의
-
+// => MyKey의 hashCode()와 equals() 재정의하기
 package step21;
 
 import java.util.HashMap;

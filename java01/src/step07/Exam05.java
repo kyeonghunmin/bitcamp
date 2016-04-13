@@ -4,7 +4,7 @@ package step07;
 public class Exam05 {
   public static void main(String[] args) {
     // 문제 : 2 * 3 + 6 - 7 = ?
-    // 문제 : 3 - 7 * 2 + 27 = ?
+    // 문제 : 3 - 7 * 2 + 27 = ? (단, 연산자 우선순위 무시한다. 순서대로 계산할 것)
 
     Calculator4 calc1 = new Calculator4();
     Calculator4 calc2 = new Calculator4();

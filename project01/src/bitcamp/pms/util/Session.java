@@ -1,10 +1,6 @@
-/*
- * 역할
+/* 역할:
  * - Controller 객체들이 공통으로 사용할 값 저장
  */
-
-
-
 package bitcamp.pms.util;
 
 import java.util.HashMap;

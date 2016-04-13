@@ -1,5 +1,6 @@
 package bitcamp.pms.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -38,14 +39,23 @@ public class MemberDao {
     }
   }
   
+  public Member selectOneByEmail(String email) {
+    SqlSession sqlSession = sqlSessionFactory.openSession();
+    
+    try {
+      return sqlSession.selectOne("MemberDao.selectOneByEmail", email);
+    } finally {
+      sqlSession.close();
+    }
+  }
+  
+  
   public int insert(Member member) throws Exception {
     SqlSession sqlSession = sqlSessionFactory.openSession(true);
-    // true로 설정하면 insert 수행시 바로 commit 된다.
-    // true로 설정하지 않으면, 자동 commit이 되지 않기 때문에 
-    // Temp 테이블에만 남아있고, 실제 테이블에 적용되지 않는다.
+    
     try {
       return sqlSession.insert("MemberDao.insert", member);
-      //                       "namespace.id", member
+      
     } finally {
       sqlSession.close();
     }
@@ -55,9 +65,10 @@ public class MemberDao {
     SqlSession sqlSession = sqlSessionFactory.openSession();
     
     try {
-      int count =  sqlSession.update("MemberDao.update", member);
+      int count = sqlSession.update("MemberDao.update", member);
       sqlSession.commit();
       return count;
+      
     } finally {
       sqlSession.close();
     }
@@ -65,12 +76,46 @@ public class MemberDao {
   
   public int delete(int no) throws Exception {
     SqlSession sqlSession = sqlSessionFactory.openSession();
+    
     try {
       int count = sqlSession.delete("MemberDao.delete", no);
       sqlSession.commit();
       return count;
+      
     } finally {
       sqlSession.close();
     }
   }
+
+  public boolean isMember(String email, String password) {
+    SqlSession sqlSession = sqlSessionFactory.openSession();
+    
+    try {
+      HashMap<String,String> paramMap = new HashMap<>();
+      paramMap.put("email", email);
+      paramMap.put("password", password);
+      
+      int count = sqlSession.selectOne("MemberDao.isMember", paramMap);
+      
+      if (count > 0) 
+        return true;
+      else 
+        return false;
+      
+    } finally {
+      sqlSession.close();
+    }
+  }
+
 }
+
+
+
+
+
+
+
+
+
+
+

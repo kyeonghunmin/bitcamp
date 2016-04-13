@@ -22,7 +22,7 @@ public class MemberAdd {
       
       System.out.printf("입력 개수 : %d\n", count);
       
-      memberDao.destroy();
+      memberDao.destroy(); // MemberDao가 준비한 자원을 해제시킬 기회를 준다.
       
     } catch (Exception e) {
       System.out.println("입력 실패입니다.");

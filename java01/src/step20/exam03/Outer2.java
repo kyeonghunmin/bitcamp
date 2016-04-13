@@ -1,4 +1,4 @@
-// 주제 : top level inner class
+// 주제 : top level inner class 선언
 
 package step20.exam03;
 

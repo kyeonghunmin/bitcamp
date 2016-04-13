@@ -38,10 +38,12 @@ public class Test10 {
                                          float.class, float.class);
     
     // 3) 메서드의 파라미터 알아내기
+    // => 아규먼트를 배열에 담아서 넘기기
     Object[] arguments = {"홍길동", 20, 85.5f, 182.4f};
     m.invoke(obj, arguments);
     System.out.println(obj);
     
+    // => 아규먼트를 차례로 나열하기
     m.invoke(obj, "임꺽정", 30, 98.2f, 192f);
     System.out.println(obj);
   }

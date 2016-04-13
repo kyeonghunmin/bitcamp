@@ -21,7 +21,7 @@
 // => 추상 클래스에서 추상 메서드의 의미는,
 //    서브 클래스에게 메서드의 구현을 강제하는 문법일 뿐이다.
 
-package step23;
+package step23.step05;
 
 public class Test {
   public static void main(String[] args) {

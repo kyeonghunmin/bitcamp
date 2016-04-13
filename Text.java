@@ -1,4 +1,41 @@
 /*
+step01 : 주석, 클래스, 진수의 표현, 값 표현.
+step02 : 변수 선언, 배열.
+step03 : String 도구, Object와 Reference.
+step04 : 연산자, 형변환.
+step05 : 조건문, 반복문.
+step06 : 메서드 정의.
+step07 : 클래스 변수 사용.
+step08 : 클래스 구동 원리.
+step09 : 사용자 정의 타입, 생성자, 인스턴스 초기화.
+step10 : 캡슐화, 메서드 접근 레벨.
+step11 : 생성자 오버로딩과 호출규칙.
+step12 : 스태틱/인스턴스 변수, final 상수.
+step13 : 랩퍼 클래스, 아규먼트, final.
+step14 : 상속, super/this.
+step15 : 다형적 변수
+step16 : java.lang.Object, toString()/equals()/hashCode() 오버라이딩.
+step17 : 키보드 입력(Scanner).
+step18 : Generic.
+step19 : 예외 처리(Exception).
+step20 : 중첩 클래스.
+step21 : Collection API.
+step22 : 파일 입출력.
+step23 : 인터페이스 개념.
+step24 : 인터페이스 구현.
+step25 : 클래스 정보 추출, Reflection API
+step26 : Generic.
+step27 : Annotation.
+step28 : JDBC, statement.
+step29 : DB 사용, 커넥션풀.
+step30 : mybatis.
+step31 : 정규표현식.
+*/
+
+
+
+
+/*
 // 2.15 (월)
 *부팅순서
 ﻿﻿BIOS가 CMOS 정보 읽음

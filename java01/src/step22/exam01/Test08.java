@@ -1,6 +1,11 @@
 // 주제 : 주어진 폴더를 뒤져서 중첩 클래스 파일만 이름을 출력하라
 // > java -cp bin step22.exam01.Test08 ./bin ../project01/bin
 
+// 출력 결과:
+// /home/bitcamp/git/Java80/java01/bin/step22/exam01/Test07$1.class
+// /home/bitcamp/git/Java80/java01/bin/step22/exam01/Test07$2.class
+// /home/bitcamp/git/Java80/java01/bin/step22/exam01/Test07$3.class
+
 package step22.exam01;
 
 import java.io.File;

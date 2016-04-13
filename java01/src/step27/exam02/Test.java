@@ -18,3 +18,9 @@ public class Test {
   }
 
 }
+/*
+# 유지 정책 확인하기
+- @Component 의 유지 정책이 SOURCE로 변경되었기 때문에
+  .class 파일에 애노테이션 정보가 포함되지 않을 것이다.
+- bin 폴더에 가서 Member.class 파일을 확인해보라!
+*/

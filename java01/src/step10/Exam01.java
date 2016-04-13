@@ -40,7 +40,8 @@ public class Exam01 {
 
     // 특정 항목의 값을 임의로 변경
     s.sum = 88;   // 문법 OK, 작업은 무효하다.
-
+    // 위 코드가 문법적으로는 문제가 없지만,
+    // 유효한 명령인가?
 
     System.out.printf("%s, %d, %d, %d, %d, %f\n",
       s.name, s.kor, s.eng, s.math, s.sum, s.aver);

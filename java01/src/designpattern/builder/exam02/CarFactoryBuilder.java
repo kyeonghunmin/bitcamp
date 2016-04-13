@@ -6,6 +6,7 @@ public class CarFactoryBuilder {
   public CarFactory build(String blueprint) {
     HashMap<String,Car> carMap = new HashMap<>();
     
+    // blueprint 형식: "key,model,cc;key,model,cc"
     String[] carinfos = blueprint.split(";");
     for (String carinfo : carinfos) {
       carMap.put(getKey(carinfo), generate(carinfo));
@@ -17,10 +18,12 @@ public class CarFactoryBuilder {
   }
   
   private String getKey(String carinfo) {
+    // carInfo : "key,model,cc"
     return carinfo.split(",")[0];
   }
   
   private Car generate(String carinfo) {
+    // carInfo : "key,model,cc"
     String[] values = carinfo.split(",");
     
     Car c = new Car();

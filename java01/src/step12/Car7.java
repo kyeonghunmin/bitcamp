@@ -22,6 +22,7 @@ public class Car7 {
   public Car7(String model, String maker, int cc, int capacity) {
     // 인스턴스 블록/메서드에서 다른 인스턴스 메서드를 호출할 때
     // this를 생략할 수 있다.
+    // => this를 생략하면, 컴파일할 때 컴파일러가 자동으로 붙인다.
     setModel(model);
     setMaker(maker);
     setCc(cc);

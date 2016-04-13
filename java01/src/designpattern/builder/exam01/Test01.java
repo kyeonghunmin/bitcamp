@@ -7,6 +7,7 @@ import java.util.HashMap;
 public class Test01 {
 
   public static void main(String[] args) {
+    //1) 자동차 정보를 준비한다.
     HashMap<String,Car> carMap = new HashMap<>();
     
     Car c = new Car();
@@ -19,6 +20,7 @@ public class Test01 {
     c.cc = 800;
     carMap.put("sonata", c);
    
+    //2) 자동차 정보를 바탕으로 자동차 공장을 준비
     CarFactory factory = new CarFactory();
     factory.setCarMap(carMap);
     

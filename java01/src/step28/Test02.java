@@ -21,9 +21,9 @@ public class Test02 {
     // 0으로 나눌시 예외 발생으로 인해 곧바로 상위 호출자(JVM)에게 보고한다.
     // => 커넥션 객체를 해제하지 못하는 문제가 발생하게 된다.
     
-    System.out.println("맑은 날씨입니다.");
+    System.out.println("맑은 날씨입니다."); // <-- 실행 안됨.
         
-    con.close();
+    con.close(); // <-- 실행 안됨.
   }
 
 }

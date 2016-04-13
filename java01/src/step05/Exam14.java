@@ -1,4 +1,4 @@
-/* 주제 : 반복문 for와 배열2 */
+/* 주제 : 반복문 for(:) */
 package step05;
 
 public class Exam14 {

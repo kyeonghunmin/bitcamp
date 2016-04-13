@@ -1,4 +1,4 @@
-package step23;
+package step23.step05;
 
 public class HelloKo implements Hello {
   @Override

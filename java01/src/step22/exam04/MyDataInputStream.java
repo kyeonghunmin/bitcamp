@@ -27,15 +27,15 @@ public class MyDataInputStream extends InputStream {
   }
 
   public short readShort() throws IOException {
-    int result = 0;
+    int result = 0;  // 예) 0x00000000
 
-    int temp = this.read();
-    result = result + (temp << 8);
+    int temp = this.read();  // 예) 0x0000002a
+    result = result + (temp << 8);  // 예) result = 0x00002a00
 
-    temp = this.read();
-    result = result + (temp);
+    temp = this.read();  // 예) 0x0000003b
+    result = result + (temp);  // 예) result = 0x00002a3b
 
-    return (short)result;
+    return (short)result;  // 앞 2바이트 날린다. 0000|2a3b
   }
 
   public int readInt() throws IOException {

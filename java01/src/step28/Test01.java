@@ -37,3 +37,42 @@ public class Test01 {
   }
 
 }
+/* 
+# JDBC API
+- DBMS와 연동할 때 사용하는 도구들의 규약
+- 이 규약에 따라 DBMS 벤더는 클래스를 작성하여 배포한다.
+  => "JDBC Driver"라 부른다.
+- 주요 규약 
+1) java.sql.Driver 인터페이스 
+  => JDBC 드라이버 정보를 다루고 커넥션을 준비하는 기능
+  => 구현체 
+  MySQL JDBC 드라이버:  com.mysql.jdbc.Driver 클래스
+  Oracle JDBC 드라이버: oracle.jdbc.OracleDriver 클래스
+
+2) java.sql.Connection 인터페이스 
+  => DBMS의 연결 정보를 다루고 질의 도구(SQL을 DBMS에 보내는 도구)를 준비하는 기능
+  => 구현체
+  MySQL JDBC 드라이버:  com.mysql.jdbc.ConnectionImpl 클래스
+  Oracle JDBC 드라이버: oracle.jdbc.OracleConnectionWrapper 클래스
+
+3) java.sql.Statement 인터페이스
+  => DBMS에 질의를 하고 데이터를 가져오는 기능
+  => 구현체 
+  MySQL JDBC 드라이버:  com.mysql.jdbc.StatementImpl 클래스
+  Oracle JDBC 드라이버: oracle.jdbc.driver.OracleStatementWrapper 클래스
+  
+4) java.sql.ResultSet 인터페이스
+  => DBMS로부터 레코드를 가져오고, 레코드의 컬럼 값을 꺼내는 기능
+  => 구현체
+  MySQL JDBC 드라이버:  com.mysql.jdbc.ResultSetImpl 클래스
+  Oracle JDBC 드라이버: oracle.jdbc.driver.OracleReturnResultSet 클래스
+
+# JDBC API의 사용
+- 직접 구현체(인터페이스를 구현한 클래스)를 사용하지 않는다.
+- 이유? 
+  => 특정 클래스 이름을 사용하면 해당 JDBC 드라이버 및 DBMS에 종속된다.
+- 프로그래밍 방식?
+  => 체인 방식을 통해 원하는 객체를 얻는다.
+  => 첫 번째 클래스의 이름만 알면 된다. 
+  => 첫 번째 클래스 이름에만 종속된다.  
+*/

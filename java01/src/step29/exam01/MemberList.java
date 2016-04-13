@@ -22,11 +22,15 @@ public class MemberList {
       
       stmt = con.createStatement();
       System.out.println("질의 객체 준비 완료");
-      
+     
+      // 서버에 SQL문을 보내기
+      // => select 결과를 리턴하는 것이 아니다! 
+      // => 서버로부터 결과를 가져올 때 사용할 도구를 리턴한다.
       rs = stmt.executeQuery("select * from MEMBERS");
       // ResultSet 구현체를 리턴한다. (select의 결과를 리턴하는 것이 아님)
       
-      while (rs.next()) {
+      // 서버에서 한 개의 결과를 가져오기
+      while (rs.next()) {  // 서버에서 한 개의 결과를 가져오기
         System.out.printf("%d, %s, %s, %s\n", 
             rs.getInt("MNO"), 
             rs.getString("MNAME"), 

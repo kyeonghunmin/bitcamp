@@ -15,10 +15,11 @@ public class Exam02 {
 
 
     System.out.println(list.indexOf("임꺽정"));
+    // indexOf()는 레퍼런스 주소가 아니라 내용을 비교한다.
     System.out.println(list.indexOf(new String("임꺽정")));
 
-    System.out.println("홍길동" == new String("홍길동")); // 다른 레퍼런스
-    System.out.println(list.contains(new String("홍길동")));
+    System.out.println("홍길동" == new String("홍길동")); // 서로 다른 레퍼런스
+    System.out.println(list.contains(new String("홍길동"))); // 내용이 같은지 비교.
 
 
     ArrayList<Object> list2 = new ArrayList<>();
@@ -28,6 +29,7 @@ public class Exam02 {
     list.addAll(list2);
 
     // for (레퍼런스 : 배열 또는 Collection 타입 객체)
+    // => 배열 또는 컬렉션 전체를 반복한다.
     for (Object element : list) {
       System.out.println(element);
     }

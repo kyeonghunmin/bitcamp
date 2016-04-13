@@ -77,15 +77,5 @@ public class Test01 {
 5) SqlSessionFactory로부터 SqlSession 객체를 얻어라.
   => SqlSession 객체는 SQL Mapper 파일에 있는 SQL문을 찾아서 실행한다.
   
-6) 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+6) SqlSession을 사용하여 DB에 질의를 수행한다.
 */

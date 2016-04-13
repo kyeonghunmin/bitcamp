@@ -19,6 +19,18 @@ public class Test12 {
     // Pattern pattern = Pattern.compile("(?=\\d)\\d"); // 값을 캡쳐한다.
     
     
+    // (?=검색패턴)대상패턴
+    //Pattern pattern = Pattern.compile("(?=abc)abcok");
+    //=> 숫자 1개를 찾아라. 단 값을 캡쳐하지는 말아라!
+    //Pattern pattern = Pattern.compile("(?=\\d)");
+    //=> 숫자 1개를 찾아라. 값을 캡쳐하라!
+    //Pattern pattern = Pattern.compile("(?=\\d)\\d");
+    //=> 숫자 1개 포함, 대소문자 1개 포함, 특수문자(!@?) 1개 포함
+    //   단 숫자,대소문자,!@? 문자만 사용할 수 있다. 
+    //Pattern pattern = Pattern.compile(
+    //    "(?=.*\\d)(?=.*[a-zA-Z])(?=.*[!@?])[0-9a-zA-Z!@?]{개수}");
+    
+    
     Matcher matcher = null;
     Pattern pattern = null;
     

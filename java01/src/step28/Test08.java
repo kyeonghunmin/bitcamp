@@ -22,6 +22,7 @@ public class Test08 {
       System.out.println("질의 객체 준비 완료");
       
     } finally {
+      // 자원을 해제할 때는 역순으로 해제해야 한다.
       try {stmt.close();} catch (Exception e) {}
       try {con.close();} catch (Exception e) {}
     }

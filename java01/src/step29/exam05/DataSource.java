@@ -5,8 +5,10 @@ import java.sql.DriverManager;
 import java.util.ArrayList;
 
 public class DataSource {
+  // 커넥션 객체를 담을 그릇 준비
   ArrayList<Connection> connectionPool = new ArrayList<>();
   
+  // 객체를 생성하는데 필요한 정보 보관
   String jdbcDriver;
   String jdbcUrl;
   String username;

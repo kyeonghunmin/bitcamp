@@ -14,6 +14,6 @@ public class Exam02 {
     if (10 > 20) {
       System.out.println("10 > 20");
     }
-    System.out.println("와~~ 정말?");
+    System.out.println("와~~ 정말?"); // if 문에 속해있지 않다.
   }
 }

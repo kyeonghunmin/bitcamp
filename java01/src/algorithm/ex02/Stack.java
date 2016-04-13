@@ -18,7 +18,7 @@ public class Stack {
       return null;
     }
     Bucket oldTop = top;
-    top = top.prev;
+    top = top.next;
     count--;
     return oldTop.value;
   }

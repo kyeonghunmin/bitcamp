@@ -22,6 +22,9 @@ public class Exam04 {
     Calculator3 calc2;
 
     // 2) 인스턴스 변수를 담은 인스턴스(object)을 준비
+    // => Calculator3 클래스에 인스턴스 변수가 있는지 조사한다.
+    // => 있다면 해당 변수에 대해 메모리를 준비한다.
+    // => 그 메모리의 주소를 리턴한다.
     calc1 = new Calculator3();    // heap에 생성된다.
     calc2 = new Calculator3();
 

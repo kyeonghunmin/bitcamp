@@ -62,6 +62,8 @@ public class Exam15 {
 
       Map.Entry<String.Member> entry = null;
       for (Object item : entrySet) {
+        // 제네릭을 사용하지 않는다면 다음과 같이 매번 형변환을 해서 
+        // 사용해야 한다.
         entry = (Map.Entry<String,Member>) item;
         System.out.printf("%s-%s\n", entry.getKey(), entry.getValue());
       }

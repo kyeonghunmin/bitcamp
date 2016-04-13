@@ -29,6 +29,9 @@ public class Exam06 {
     printList(list);
 
     // 정렬
+    // 익명 로컬 중첩 클래스
+    // => 정렬을 처리하는 코드가 가까이에 있어 좋다.
+    // => 인스턴스를 한개만 만들기 때문에 편리하다.
     list.sort(new Comparator<String>() {
       @Override
       public int compare(String s1, String s2) {

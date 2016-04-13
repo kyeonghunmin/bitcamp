@@ -41,8 +41,8 @@ public class Test11 {
       if (!m.getName().equals("setMember"))
         continue;
       
-      types = m.getArgumentTypes();
-      vars = m.getLocalVariableTable().getLocalVariableTable();
+      types = m.getArgumentTypes();  // this 변수를 고려하지 않는다. 4개
+      vars = m.getLocalVariableTable().getLocalVariableTable();  // this 변수 포함
       
       for (int i = 1; i < vars.length; i++) {
         System.out.printf("%s:%s\n", vars[i].getName(), types[i-1].toString());

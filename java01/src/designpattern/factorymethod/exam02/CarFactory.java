@@ -4,6 +4,7 @@ package designpattern.factorymethod.exam02;
 
 public class CarFactory {
   
+  // 이렇게 객체를 생성해주는 메서드를 "factory method"라 부른다.
   public Car createCar(String name) {
     Car c = new Car();
     

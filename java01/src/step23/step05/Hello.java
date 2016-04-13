@@ -1,4 +1,4 @@
-package step23;
+package step23.step05;
 
 public interface Hello {
   // 호출 규칙을 정의한다.
