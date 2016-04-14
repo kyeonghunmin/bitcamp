@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- XML 네임스페이스 
+     => 엘리먼트들(태그들)을 그룹으로 묶어서 관리하기 위한 문법
+     => 실무에서 개발자가 정의할 일이 없다.
+     => 다른 기술을 사용하다보면 네임스페이스를 설정해야 하는 경우가 있다.
+        네임스페이스에 대한 개념을 이해하라는 측면!
+-->
+<books>
+  <press>
+    <name>비트출판사</name>
+    <tel>111-1111</tel>
+  </press>
+  
+  <author>
+    <name>홍길동</name>
+    <tel>111-1111</tel>
+  </author>
+
+  <book 
+    xmlns="http://java80.bitcamp.com/book"
+    xmlns:p="http://java80.bitcamp.com/press"
+    xmlns:a="http://java80.bitcamp.com/author">
+    <title>자바 프로그래밍</title>
+    <content>자바 기초 문법에 대한 책이다.</content>
+    <price>32000</price>
+    <p:name>비트출판사</p:name>
+    <a:name>홍길동</a:name>
+  </book>
+</books>

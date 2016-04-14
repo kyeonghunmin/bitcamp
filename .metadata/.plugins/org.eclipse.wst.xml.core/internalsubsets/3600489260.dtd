@@ -1,0 +1,10 @@
+
+  <!ELEMENT books (book)+>
+  <!ELEMENT book (title,content?,press,price,author*,(local|foreign))>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT content (#PCDATA)>
+  <!ELEMENT press (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT local EMPTY>
+  <!ELEMENT foreign EMPTY>

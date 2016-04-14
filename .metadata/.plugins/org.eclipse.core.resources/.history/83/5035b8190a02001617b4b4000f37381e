@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- XML 엘리먼트 작성 규칙 정의하기
+=> OR 연산자
+-->
+<!DOCTYPE books [
+  <!ELEMENT books (book)+>
+  <!ELEMENT book (title,content?,press,price,author*,(local|foreign))>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT content (#PCDATA)>
+  <!ELEMENT press (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT local EMPTY>
+  <!ELEMENT foreign EMPTY>
+]>
+<books>
+  <book>
+	  <title>자바 프로그래밍</title>
+	  <content>자바 기초 문법에 대한 책이다.</content>
+	  <press>비트 출판사</press>
+	  <price>32000</price>
+	  <local/>
+  </book>
+  <book>
+    <title>자바 프로그래밍2</title>
+    <press>비트 출판사</press>
+    <price>32000</price>
+    <author>홍길동</author>
+    <author>임꺽정</author>
+    <foreign/>
+  </book>
+</books>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- XML 엘리먼트 작성 규칙 정의하기
+=> 파라미터 엔티티 선언
+<!ENTITY % 이름 값>
+=> DTD에서 사용할 수 있다.
+-->
+<!DOCTYPE books [
+  <!ENTITY pre "출판사">
+  <!ENTITY % cattr "CDATA #REQUIRED">
+  
+  <!ELEMENT books (press+,book*)>
+  <!ELEMENT book EMPTY>
+  <!ATTLIST book
+    title %cattr;
+    content CDATA #IMPLIED
+    location (local|foreign) "local"
+    type CDATA #FIXED "paper"
+    press IDREF #REQUIRED
+    price %cattr;
+    author NMTOKENS #IMPLIED
+  >
+  <!ELEMENT press (name,tel?,web?)>
+  <!ATTLIST press
+    id ID #REQUIRED
+  >
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT tel (#PCDATA)>
+  <!ELEMENT web (#PCDATA)>
+]>
+<books>
+  <press id="p001">
+    <name>비트&pre;</name> <!-- 엔티티 사용법 : &엔티티명; -->
+  </press>
+  
+  <book title="자바 프로그래밍" content="자바 기초 문법서이다." type="paper"
+        press="p001" price="32000"/>
+  
+  <book title="자바 프로그래밍2" location="foreign" press="p001" price="42000" author="하하 호호 히히"/>
+   
+</books>

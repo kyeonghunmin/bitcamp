@@ -1,0 +1,19 @@
+
+  <!ELEMENT books (press+,book*)>
+  <!ELEMENT book EMPTY>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    content CDATA #IMPLIED
+    location (local|foreign) "local"
+    type CDATA #FIXED "paper"
+    press IDREF #REQUIRED
+    price CDATA #REQUIRED
+    author NMTOKENS #IMPLIED
+  >
+  <!ELEMENT press (name,tel?,web?)>
+  <!ATTLIST press
+    id ID #REQUIRED
+  >
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT tel (#PCDATA)>
+  <!ELEMENT web (#PCDATA)>

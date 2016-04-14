@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- DTD를 다른 XML 파일에서도 사용할 수 있도록 별도의 파일로 분리한다.
+     => books.dtd 파일로 분리
+-->
+<!DOCTYPE books SYSTEM "books.dtd">
+<books>
+  <press id="p001">
+    <name>비트&pre;</name> <!-- 엔티티 사용법 : &엔티티명; -->
+  </press>
+  
+  <book title="자바 프로그래밍" content="자바 기초 문법서이다." type="paper"
+        press="p001" price="32000"/>
+  
+  <book title="자바 프로그래밍2" location="foreign" press="p001" price="42000" author="하하 호호 히히"/>
+   
+</books>

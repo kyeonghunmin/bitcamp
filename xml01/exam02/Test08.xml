@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- XML 엘리먼트 작성 규칙 정의하기
+=> 속성(attribute) 선언
+   <!ATTLIST 엘리먼트명
+     속성명 타입 기타옵션
+   >
+   
+=> 속성 타입
+ID : 아이디 값. 문서 안에서 중복되면 안된다. XML 이름짓는 규칙에 따라야 한다.
+IDREF : 아이디 값을 가리킨다.
+NMTOKEN : ID 처럼 XML 이름짓는 규칙에 따라 값을 넣어야 한다. (중복 허용)
+NMTOKENS : 여러 개의 NMTOKEN을 넣을 수 있다.
+
+
+-->
+<!DOCTYPE books [
+  <!ELEMENT books (press+,book*)>
+  <!ELEMENT book EMPTY>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    content CDATA #IMPLIED
+    location (local|foreign) "local"
+    type CDATA #FIXED "paper"
+    press IDREF #REQUIRED
+    price CDATA #REQUIRED
+    author NMTOKENS #IMPLIED
+  >
+  <!ELEMENT press (name,tel?,web?)>
+  <!ATTLIST press
+    id ID #REQUIRED
+  >
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT tel (#PCDATA)>
+  <!ELEMENT web (#PCDATA)>
+]>
+<books>
+  <press id="p001">
+    <name>비트 출판사</name>
+  </press>
+  
+  <book title="자바 프로그래밍" content="자바 기초 문법서이다." type="paper"
+        press="p001" price="32000"/>
+  
+  <book title="자바 프로그래밍2" location="foreign" press="p001" price="42000" author="하하 호호 히히"/>
+   
+</books>

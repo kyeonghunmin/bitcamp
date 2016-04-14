@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- XML 엘리먼트 작성 규칙 정의하기
+=> 속성(attribute) 선언
+   <!ATTLIST 엘리먼트명
+     속성명 타입 기타옵션
+   >
+   
+=> 속성 타입
+CDATA : 문자열
+(값|값|값) : 열거형
+
+=> 개수 지정
+#REQUIRED : 필수 속성
+#IMPLIED  : 선택 속성
+#FIXED    : 상수 속성 (지정된 값 외에 넣을 수 없다.)
+#'기본값' : 속성을 생략했을 때 기본으로 설정되는 값 
+-->
+<!DOCTYPE books [
+  <!ELEMENT books (book)+>
+  <!ELEMENT book (press,price,author*)>
+  <!ATTLIST book
+    title CDATA #REQUIRED
+    content CDATA #IMPLIED
+    location (local|foreign) "local"
+    type CDATA #FIXED "paper"
+  >
+  <!ELEMENT press (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT author (#PCDATA)>
+  <!ELEMENT local EMPTY>
+  <!ELEMENT foreign EMPTY>
+]>
+<books>
+  <book title="자바 프로그래밍" content="자바 기초 문법서이다." type="paper">
+	  <press>비트 출판사</press>
+	  <price>32000</price>
+  </book>
+  
+  <book title="자바 프로그래밍2" location="foreign">
+    <press>비트 출판사</press>
+    <price>32000</price>
+    <author>홍길동</author>
+    <author>임꺽정</author>
+  </book>
+</books>

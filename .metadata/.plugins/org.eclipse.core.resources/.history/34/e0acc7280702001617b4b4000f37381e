@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- XML 엘리먼트 작성 규칙 정의하기
+     => 엘리먼트 정의하기
+        <!ELEMENT 태그명 (콘텐츠 규칙)>
+     => #PCDATA (Parsed Character DATA)
+        콘텐츠가 문자열이어야 함을 선언한다.
+        만약 XML 파서가 문자열을 분석 했을 때 다른 엘리먼트(태그)가 있다면
+        오류가 발생한다.
+  
+# 용어정리
+=> Well-formed XML : XML 작성 규칙에 따라 만든 XML 문서
+=> Validate XML : (Well-formed XML + DTD 규칙)에 따라 작성된 문서
+        
+-->
+<!DOCTYPE books [
+  <!ELEMENT books (#PCDATA)>
+]>  <!-- 문자열만 올 수 있다. -->
+<books>
+	자바 프로그래밍, 자바 기초 문법에 대한 책이다, 비트출판사, 32000
+	<p>ddd</p> <!-- 문자열이 아니기 때문에 오류 발생 -->
+</books>

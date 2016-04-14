@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ENTITY pre "출판사">
+<!ENTITY % cattr "CDATA #REQUIRED">
+
+<!ELEMENT books (press+,book*)>
+<!ELEMENT book EMPTY>
+<!ATTLIST book
+  title %cattr;
+  content CDATA #IMPLIED
+  location (local|foreign) "local"
+  type CDATA #FIXED "paper"
+  press IDREF #REQUIRED
+  price %cattr;
+  author NMTOKENS #IMPLIED
+>
+<!ELEMENT press (name,tel?,web?)>
+<!ATTLIST press
+  id ID #REQUIRED
+>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT tel (#PCDATA)>
+<!ELEMENT web (#PCDATA)>
