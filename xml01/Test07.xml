@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 내용에 <를 포함하려면 XML에 미리 정의된 상수를 이용할 것.
+     XML 상수를 "엔티티"라고 부른다.
+     # 미리 정의된 XML 엔티티
+     1) < : &lt;  less than
+     2) > : &gt;  greater than
+     3) & : &amp; ampersand
+-->
+<book>
+  <title>자바 프로그래밍</title>
+  <content>
+    if (a &lt; 10)
+      okok;
+  </content>
+</book>

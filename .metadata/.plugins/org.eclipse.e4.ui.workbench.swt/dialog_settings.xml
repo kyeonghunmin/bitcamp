@@ -3,12 +3,13 @@
 	<section name="ShowViewDialog">
 		<item key="DIALOG_WIDTH" value="388"/>
 		<item value="1|Noto Sans|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
-		<item value="org.eclipse.jdt.ui.PackageExplorer" key="ShowViewDialog.STORE_SELECTED_VIEW_ID"/>
+		<item value="de.babe.eclipse.plugins.quickREx.views.QuickRExView" key="ShowViewDialog.STORE_SELECTED_VIEW_ID"/>
 		<item value="468" key="DIALOG_HEIGHT"/>
 		<item value="769" key="DIALOG_X_ORIGIN"/>
 		<item value="211" key="DIALOG_Y_ORIGIN"/>
 		<list key="ShowViewDialog.STORE_EXPANDED_CATEGORIES_ID">
 			<item value="Java"/>
+			<item value="QuickREx"/>
 		</list>
 	</section>
 </section>

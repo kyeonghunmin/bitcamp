@@ -8,6 +8,7 @@
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="open"/>
 			<item value="Member"/>
 			<item value="member"/>
 			<item value="project"/>
@@ -15,7 +16,6 @@
 			<item value="PROJECT"/>
 			<item value="폰갭"/>
 			<item value="tomcat"/>
-			<item value="bashrc"/>
 		</list>
 		<list key="replacehistory">
 			<item value="task"/>

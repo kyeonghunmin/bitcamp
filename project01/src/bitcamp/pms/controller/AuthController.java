@@ -80,7 +80,7 @@ public class AuthController {
     while (true) {
       System.out.print("이메일: ");
       value = keyScan.nextLine();
-      if (value.matches("[a-zA-Z][\\w\\.]*@([\\w]+\\.)?[\\w]+\\.[a-zA-Z]{2,}"))
+      if (value.matches("[a-zA-Z][\\w\\.]*@([\\w]+\\.)+[a-zA-Z]{2,}"))
         break;
       System.out.println("이메일 형식에 맞지 않습니다. 예) aaa.aaa@bbb.com");
     }

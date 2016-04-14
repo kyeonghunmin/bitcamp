@@ -952,6 +952,58 @@ ex) 계좌이체 업무
 
 
 
+// 4.14 (목)
+* Dynamic SQL
+ - if
+ - choose (when, otherwise)
+ - trim (where, set)
+ - foreach
+ ==> SQL문에서 사용 가능.
+ 
+ 
+* Hyper-Text Markup Language (HTML)
+ - FTP (File Transfer Protocol) 문제점?
+   1) 논문이 참조하는 다른 논문을 다운로드가 불편
+      - 서버 정보가 없기 때문.
+      - 직접 서버에 접속해서 다운로드해야 하기 때문.
+
+ - 해결방안?
+   1) 참조하는 논문의 연결 정보를 포함. -> Hyper-Text 고안.
+      -> 부가정보(연결정보)를 포함할 수 있는 특별한 문법을 추가하게 됨.
+      (부가정보 : metadata)
+      (markup : metadata를 표현하는 문법)
+      ==> Hyper-Text Markup Language (HTML)
+
+  - HTML을 FTP보다 쉽게 다운로드 할 수 있는 방법을 고안
+    - 규칙을 정의하게 됨 => HTTP를 정의 (Hyper-Text Transfer Protocol)
+    - HTTP Server (Web Server) <-> HTTP Client (Web Browser)
+
+  - HTML의 목표
+    1) 연결정보를 문서 내에 포함. ex) a
+    2) 콘텐츠의 모양을 제어. ex) i, b, hr, div
+    3) 콘텐츠의 구조 설명. ex) h1, h2, p, address
+
+  - XML (Extensible Markup Language)
+    목표 : 데이터를 구조화 시키는데 초점을 맞춤. (데이터 정의/추출이 쉬워짐)
+           => 이기종 S/W 끼리 데이터 교환이 용이해진다.
+
+
+* Web의 진화
+ 1) 문서를 연결하는데 초점 -> 정보 수집이 쉬워짐
+ 2) Nescape GUI 웹 브라우저 등장 -> 그림 출력 가능 -> 홍보 페이지(마케팅용)로 사용 -> 홈페이지 등장
+    Homepage + Program ==> 고객과 Interaction이 가능해짐 (게시판, 방명록, 의뢰 등..)
+    ==> 마케팅 뿐만 아니라 온라인 비즈니스가 시작됨
+ 3) 웹의 대중화 -> 업무용 S/W 개발할 때,
+                   기존 C, Delphi에서 Java, HTML 등의 웹 기술로 바뀜.
+    [웹의 필요성]
+    신자유주의 -> 글로벌화 가속 -> 무한경쟁 -> 제품 주기 가속 -> 업무 프로세스 변경이 자주 발생
+
+
+
+
+
+
+
 
 
 

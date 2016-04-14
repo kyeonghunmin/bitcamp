@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 루트 엘리먼트는 한 개만 올 수 있다. 
+root element : 가장 바깥 엘리먼트.
+-->
+<book>
+</book>
+<book>
+</book>

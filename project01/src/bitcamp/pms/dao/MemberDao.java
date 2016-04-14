@@ -33,7 +33,10 @@ public class MemberDao {
     SqlSession sqlSession = sqlSessionFactory.openSession();
     
     try {
-      return sqlSession.selectOne("MemberDao.selectOne", no);
+      HashMap<String,Object> paramMap = new HashMap<>();
+      paramMap.put("no", no);
+      
+      return sqlSession.selectOne("MemberDao.selectOne", paramMap);
     } finally {
       sqlSession.close();
     }
@@ -43,7 +46,10 @@ public class MemberDao {
     SqlSession sqlSession = sqlSessionFactory.openSession();
     
     try {
-      return sqlSession.selectOne("MemberDao.selectOneByEmail", email);
+      HashMap<String,Object> paramMap = new HashMap<>();
+      paramMap.put("email", email);
+      
+      return sqlSession.selectOne("MemberDao.selectOne", paramMap);
     } finally {
       sqlSession.close();
     }
