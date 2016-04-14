@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- XML 엘리먼트 작성 규칙 정의하기
 => 콘텐츠 타입 정의하기
-(#PCDATA)  => 문자열
-(엘리먼트) => 자식 엘리먼트 (Child element)
+(#PCDATA)  => 문자열이 올 수 있다.
+(엘리먼트) => 자식 엘리먼트(Child element)가 올 수 있다.
 -->
 <!DOCTYPE books [
   <!ELEMENT books (book)>

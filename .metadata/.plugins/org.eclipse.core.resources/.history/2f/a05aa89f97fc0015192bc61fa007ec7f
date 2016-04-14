@@ -1,5 +1,0 @@
-package designpattern.builder.exam02;
-
-public class CarFactoryBuilder {
-
-}

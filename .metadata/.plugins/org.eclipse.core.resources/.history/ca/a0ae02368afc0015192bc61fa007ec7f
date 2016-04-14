@@ -1,7 +1,0 @@
-// 역할 : Car 객체를 생성해주는 역할을 수행한다.
-
-package designpattern.factorymethod.exam02;
-
-public class CarFactory {
-
-}

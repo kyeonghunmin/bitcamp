@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- 시작 태그와 끝 태그는 항상 짝을 이루어야 한다.
--->
-<book>
-  <title>자바 프로그래밍</title>
-</book>

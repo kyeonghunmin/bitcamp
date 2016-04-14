@@ -10,6 +10,7 @@
 	  <press>비트출판사</press>
 	  <price>32,000원</price>
 	</book>
+	
 	<book>
 	  <lang>korean</lang>
 	  <page>780</page>
@@ -20,6 +21,7 @@
     <press>비트출판사</press>
     <price>42,000원</price>
   </book>
+  
   <book 
     lang="korean"
     page="780"

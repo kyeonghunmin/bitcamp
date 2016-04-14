@@ -4,5 +4,5 @@ root element : 가장 바깥 엘리먼트.
 -->
 <book>
 </book>
-<book>
+<book> <!-- 오류 (두 개가 올 수 없음) -->
 </book>

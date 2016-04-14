@@ -1,0 +1,13 @@
+package step22;
+
+import java.io.File;
+
+public class Test02 {
+
+  public static void main(String[] args) {
+    File f = new File("./test02.txt");
+    f.createNewFile();
+
+  }
+
+}

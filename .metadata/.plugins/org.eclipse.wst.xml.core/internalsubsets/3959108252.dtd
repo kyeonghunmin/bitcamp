@@ -1,6 +1,6 @@
 
   <!ELEMENT books (book)+>
-  <!ELEMENT book (press,price,author*)>
+  <!ELEMENT book (author*)>
   <!ATTLIST book
     title CDATA #REQUIRED
     content CDATA #IMPLIED

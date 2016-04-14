@@ -1,0 +1,16 @@
+package step22;
+
+import java.io.File;
+
+public class Test01 {
+
+  public static void main(String[] args) throws Exception {
+    File f = new File("../test.java");
+    
+    System.out.printf("getName(): %s\n", f.getName());
+    System.out.printf("getPath(): %s\n", f.getPath());
+    System.out.println(f.getAbsolutePath());
+    System.out.println(f.getCanonicalPath());
+  }
+
+}

@@ -5,5 +5,5 @@
 <book>
   <title>자바 프로그래밍</title>
   <local></local> <!-- 기본 형태 -->
-  <local/> <!-- 생략한 형태 -->
+  <local/> <!-- 생략한 형태 (/를 추가함) -->
 </book>

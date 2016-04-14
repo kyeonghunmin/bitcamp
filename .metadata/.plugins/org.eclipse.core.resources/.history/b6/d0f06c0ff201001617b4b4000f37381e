@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- 내용이 없을 때는 끝 태그를 생략할 수 있다.
-     대신 시작 태그에 /를 붙여야 한다.
--->
-<book>
-  <title>자바 프로그래밍</title>
-  <local/>
-</book>

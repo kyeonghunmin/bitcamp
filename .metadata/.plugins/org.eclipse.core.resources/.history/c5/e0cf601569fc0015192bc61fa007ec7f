@@ -1,8 +1,0 @@
-package step29.exam05;
-
-import java.sql.Connection;
-import java.util.ArrayList;
-
-public class DataSource {
-  ArrayList<Connection> list = new ArrayList<>();
-}

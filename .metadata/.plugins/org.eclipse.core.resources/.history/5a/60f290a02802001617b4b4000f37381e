@@ -1,0 +1,22 @@
+package step22;
+
+import java.io.File;
+
+public class Test01 {
+
+  public static void main(String[] args) throws Exception {
+    File f = new File("../project01/src/bitcamp/pms/ProjectApp.java");
+    
+    System.out.printf("getName(): %s\n", f.getName());
+    System.out.printf("getPath(): %s\n", f.getPath());
+    System.out.println(f.getAbsolutePath());
+    System.out.println(f.getCanonicalPath());
+    System.out.println(f.getParent());
+    System.out.println(f.length());
+    System.out.println(f.toURI());
+    System.out.println(f.isFile());
+    System.out.println(f.isDirectory());
+    System.out.println(f.exists());
+  }
+
+}

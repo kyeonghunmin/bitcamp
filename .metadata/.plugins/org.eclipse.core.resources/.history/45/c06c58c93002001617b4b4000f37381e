@@ -1,0 +1,16 @@
+package step22;
+
+import java.io.File;
+
+public class Test02 {
+
+  public static void main(String[] args) throws Exception {
+    File f = new File("./test0202.txt");
+    File f2 = new File("./okok.txt");
+    
+    f.delete();
+    f2.delete();
+    
+  }
+
+}
