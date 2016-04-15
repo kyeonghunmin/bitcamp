@@ -1,0 +1,22 @@
+package step32.dom;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+public class Test01 {
+
+  public static void main(String[] args) throws Exception {
+    // 1) DocumentBuilder 공장을 준비한다.
+    DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+    System.out.println(dbf.getClass().getName());
+    
+    // 2) 공장으로부터 DocumentBuilder 객체를 생성한다.
+    //    XML 문서를 분석하여 태그 별로 tree 구조를 만든다.
+    DocumentBuilder db = dbf.newDocumentBuilder();
+    
+    // 3) XML 파일을 분석하여, DOM 객체 Tree를 만든다.
+    
+    
+  }
+
+}

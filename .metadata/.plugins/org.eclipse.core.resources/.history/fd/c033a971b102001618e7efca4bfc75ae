@@ -1,0 +1,41 @@
+package step32.sax;
+
+import java.io.File;
+import java.io.IOException;
+
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+
+import org.xml.sax.XMLReader;
+
+public class Test02 {
+
+  public static void main(String[] args) throws Exception {
+
+    SAXParserFactory spf = SAXParserFactory.newInstance();
+    System.out.println(spf.getClass().getName());
+    
+    spf.setNamespaceAware(true);
+    
+    SAXParser saxParser = spf.newSAXParser();
+    
+    XMLReader xmlReader = saxParser.getXMLReader();
+    
+ 
+    String fileURL = convertToFileURL();
+    System.out.println(fileURL);
+    
+    xmlReader.parse(fileURL);
+  }
+
+  private static String convertToFileURL(String filename) throws IOException {
+    File f = new File(filename);
+    String path = f.getCanonicalPath();
+    String fileURL = "file:";
+    if (!path.startsWith("/")) {
+    }
+    fileURL += path;
+    return fileURL;
+  }
+
+}

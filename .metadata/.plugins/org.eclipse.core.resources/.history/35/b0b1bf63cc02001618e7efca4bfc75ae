@@ -1,0 +1,6 @@
+1. MySQL 클라이언트 실행
+>mysql -u java80 -p
+
+2. 사용할 DB 선택
+>use java80db;
+

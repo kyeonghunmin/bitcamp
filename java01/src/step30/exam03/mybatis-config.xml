@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<!--
+ - : +는 국제공인, -는 사립
+ mybaits.org : 조직이름
+ DTD config 3.0 : DTD 이름
+ EN : DTD 작성 언어
+ 
+ PUBILC이 아니고 SYSTEM인 경우 바로 경로가 나온다.
+ 
+ * De-facto : 국제공인은 아니지만 w3c의 html 등과 같이 
+              "사실상의 표준"을 정할 수 있는 기관.
+ -->
 <!DOCTYPE configuration
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-config.dtd">

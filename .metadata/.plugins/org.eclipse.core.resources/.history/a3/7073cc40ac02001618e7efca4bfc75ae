@@ -1,0 +1,20 @@
+package step32.sax;
+
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+
+public class Test01 {
+
+  public static void main(String[] args) throws Exception {
+    // -D 옵션을 통해서 바꿀 수 있다.
+
+    SAXParserFactory spf = SAXParserFactory.newInstance(); // SAXParser 공장을 준비한다.
+    System.out.println(spf.getClass().getName());
+    
+    spf.setNamespaceAware(true); // SAXParser의 네임스페이스 인지 가능 여부를 지정한다.
+                                 // 네임스페이스가 있으면 처리하라는 뜻.
+    SAXParser saxParser = spf.newSAXParser(); // SAXParser 생성
+
+  }
+
+}

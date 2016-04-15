@@ -1,0 +1,20 @@
+// 역할 : Singleton 패턴 적용
+
+package step32.exam01;
+
+public abstract class CarFactory {
+  private CarFactory() {}
+  
+  static CarFactory instance;
+  
+  public static CarFactory newInstance() throws Exception {
+    if (instance == null) {
+      String className = System.getProperty("CarFactory");
+      Class<?> clazz = Class.forName(className);
+      instance = (CarFactory)clazz.newInstance();
+    }
+    return instance;
+  }
+  
+  public abstract Car newCar(String name);
+}

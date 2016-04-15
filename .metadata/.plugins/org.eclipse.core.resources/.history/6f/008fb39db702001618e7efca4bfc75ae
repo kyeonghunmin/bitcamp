@@ -1,0 +1,13 @@
+package step32.dom;
+
+import javax.xml.parsers.DocumentBuilderFactory;
+
+public class Test01 {
+
+  public static void main(String[] args) {
+    DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+    
+    System.out.println(dbf.getClass().getName());
+  }
+
+}
