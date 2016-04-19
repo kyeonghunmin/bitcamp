@@ -1,0 +1,50 @@
+/* 주제 : DBMS 함수
+*/
+
+drop table test01;
+create table test01(
+  tno int primary key,
+  email varchar(10) unique not null,
+  fst_nm varchar(20),
+  lst_nm varchar(20),
+  age int,
+  cre_dt date
+);
+
+1. 날짜 및 시간 함수
+=> now() : 날짜 및 시간
+
+insert into test01 values(1,'aa@test.com','aa','ok',18,now());
+insert into test01 values(2,'bb@test.com','bb','ok',19,curdate());
+insert into test01 values(3,'cc@test.com','cc','ok',20,'2016-2-1');
+insert into test01 values(4,'dd@test.com','dd','ok',21,'2016-3-15');
+insert into test01 values(5,'ee@test.com','ee','ok',22,'2016-3-29');
+insert into test01 values(6,'ff@test.com','ff','ok',23,'2016-4-2');
+insert into test01 values(7,'gg@test.com','gg','ok',24,'2016-4-16');
+insert into test01 values(8,'hh@test.com','hh','ok',25,'2016-4-27');
+insert into test01 values(9,'ii@test.com','ii','ok',26,'2016-5-3');
+insert into test01 values(10,'jj@test.com','jj','ok',27,'2016-5-17');
+
+
+2. 연산자
+select * from test01 where tno > 3;
+select * from test01 where tno >= 3;
+select * from test01 where tno < 3;
+select * from test01 where tno <= 3;
+select * from test01 where tno = 3;
+select * from test01 where tno > 3 and tno < 7;
+select * from test01 where tno between 3 and 7; => 3이랑 7을 포함한다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
